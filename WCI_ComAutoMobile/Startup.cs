@@ -2,14 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Model.Models.General;
 
 namespace WCI_ComAutoMobile
 {
@@ -25,6 +28,14 @@ namespace WCI_ComAutoMobile
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Settings settings = new Settings();
+            Configuration.GetSection("Settings").Bind(settings);
+
+            services.Configure<Settings>(options => Configuration.GetSection("Settings").Bind(options));
+
+            services.AddDbContext<SolutionContext>(options =>
+               options.UseSqlServer(settings.ConnectionString));
+
             services.AddControllers();
         }
 

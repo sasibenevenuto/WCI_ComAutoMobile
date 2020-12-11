@@ -12,3 +12,4 @@ C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Context\obj\Debug\n
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Context\bin\Debug\netcoreapp3.1\Context.runtimeconfig.json
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Context\bin\Debug\netcoreapp3.1\Context.runtimeconfig.dev.json
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Context\obj\Debug\netcoreapp3.1\Context.genruntimeconfig.cache
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Context\obj\Debug\netcoreapp3.1\Context.csproj.CoreCompileInputs.cache

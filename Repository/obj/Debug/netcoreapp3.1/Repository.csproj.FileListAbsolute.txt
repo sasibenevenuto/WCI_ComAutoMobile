@@ -4,6 +4,9 @@ C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\bin\Debu
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
-C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.dll
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\bin\Debug\netcoreapp3.1\Model.dll
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\bin\Debug\netcoreapp3.1\Model.pdb
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CopyComplete
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
