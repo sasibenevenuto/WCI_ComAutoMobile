@@ -1,19 +1,29 @@
-﻿using Model.Models.General;
+﻿using Model.Enums.Companies;
+using Model.Models.General;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Model.Models.Companies
 {
-    [Table("Account")]
-    public class Account : BaseModel
+    [Table("CompanyConfigNFe")]
+    public class CompanyConfigNFe : BaseModel
     {
         [Key]
-        public Guid AccountId { get; set; }
+        public int CompanyConfigNFeId { get; set; }
 
-        public List<Company> Companies { get; set; }
+        [ForeignKey("Company")]
+        public Guid CompanyId { get; set; }
+        public Company Company { get; set; }
+
+        [Column(TypeName = "decimal(18,4)")]
+        public int CurrentNumberNfe { get; set; }
+
+        [Required, Column("nvarchar(200)")]
+        public string VersionNfe { get; set; }
+
+        [Required]
+        public EEnvironment EnvironmentNFE { get; set; }
 
         #region .:: PesonalInformation ::.
         [ScaffoldColumn(false), ForeignKey("PersonalInformationUser")]
@@ -24,8 +34,6 @@ namespace Model.Models.Companies
         public override int UserIDLastUpdate { get; set; }
         [ScaffoldColumn(false)]
         public PersonalInformation PersonalInformationUpdate { get; set; }
-        #endregion
-
-
+        #endregion      
     }
 }

@@ -1,9 +1,7 @@
-﻿using Model.Models.General;
-using System;
-using System.Collections.Generic;
+﻿using Model.Enums.Identity;
+using Model.Models.General;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Model.Models.Identity
 {
@@ -12,5 +10,7 @@ namespace Model.Models.Identity
     {
         [Key]
         public int ClaimId { get; set; }
+        public string Description { get; set; }
+        public ETypeFunctionClaim TypeFunctionClaim { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Model.Models.General;
+using Model.Models.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,5 +17,12 @@ namespace Model.Models.Companies
         [ForeignKey("Company")]
         public Guid CompanyId { get; set; }
         public Company Company { get; set; }
+
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+        public User User { get; set; }
+
+        [Column("nvarchar(200)")]
+        public string Post { get; set; }
     }
 }

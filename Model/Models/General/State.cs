@@ -1,19 +1,28 @@
-﻿using Model.Models.General;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Model.Models.Companies
+namespace Model.Models.General
 {
-    [Table("Account")]
-    public class Account : BaseModel
+    [Table("State")]
+    public class State : BaseModel
     {
         [Key]
-        public Guid AccountId { get; set; }
+        public int StateId { get; set; }
 
-        public List<Company> Companies { get; set; }
+        [Required, Column("nvarchar(200)")]
+        public string Name { get; set; }
+
+        [Column("nvarchar(20)")]
+        public string FederativeUnit { get; set; }
+        [Column("nvarchar(20)")]
+        public string ExternalCode { get; set; }
+
+        #region .:: Many-To-One ::.
+        public List<City> Cities { get; set; }
+        #endregion
 
         #region .:: PesonalInformation ::.
         [ScaffoldColumn(false), ForeignKey("PersonalInformationUser")]
@@ -25,7 +34,5 @@ namespace Model.Models.Companies
         [ScaffoldColumn(false)]
         public PersonalInformation PersonalInformationUpdate { get; set; }
         #endregion
-
-
     }
 }

@@ -17,6 +17,7 @@ namespace Model.Models.Identity
         public string UserId { get; set; }
         public User User { get; set; }
 
+        [ForeignKey("Claim")]
         public int ClaimId { get; set; }
         public Claim Claim { get; set; }
 
