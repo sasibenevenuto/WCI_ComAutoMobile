@@ -24,8 +24,9 @@ namespace Context
         public DbSet<City> City { get; set; }
         public DbSet<PersonalInformation> PersonalInformation { get; set; }
         public DbSet<State> State { get; set; }
-        public DbSet<Account> Account { get; set; }
-        public DbSet<Account> Account { get; set; }
+        public DbSet<Claim> Claim { get; set; }
+        public DbSet<Profile> Profile { get; set; }
+        public DbSet<Users_x_Claims> Users_x_Claims { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
