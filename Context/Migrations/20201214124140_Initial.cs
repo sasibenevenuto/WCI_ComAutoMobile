@@ -39,7 +39,7 @@ namespace Context.Migrations
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -48,10 +48,21 @@ namespace Context.Migrations
                 {
                     CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    nvarchar200 = table.Column<string>(name: "nvarchar(200)", type: "nvarchar(max)", nullable: true),
-                    nvarchar20 = table.Column<string>(name: "nvarchar(20)", type: "nvarchar(max)", nullable: true),
-                    nvarcharmax = table.Column<string>(name: "nvarchar(max)", type: "nvarchar(max)", nullable: true),
-                    nvarchar250 = table.Column<string>(name: "nvarchar(250)", type: "nvarchar(max)", nullable: true),
+                    TradingName = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    FantasyName = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    CNPJ = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    StateRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    CNAE = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    MunicipalityRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    StateRegistrationReplaceTributary = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    UrlLogo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CellPhone = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    PhoneNumbers = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    PostalCode = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(250)", nullable: true),
+                    AddressNumber = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    AddressComplement = table.Column<string>(type: "nvarchar(250)", nullable: true),
+                    Neighborhood = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     CityId = table.Column<int>(type: "int", nullable: false),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
@@ -79,7 +90,7 @@ namespace Context.Migrations
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -133,7 +144,7 @@ namespace Context.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    nvarchar200 = table.Column<string>(name: "nvarchar(200)", type: "nvarchar(max)", nullable: true),
+                    Post = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
@@ -152,56 +163,19 @@ namespace Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users_x_Claims",
-                columns: table => new
-                {
-                    Users_x_ClaimsId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ClaimId = table.Column<int>(type: "int", nullable: false),
-                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
-                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
-                    Active = table.Column<bool>(type: "bit", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Users_x_Claims", x => x.Users_x_ClaimsId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CustomerAddress",
-                columns: table => new
-                {
-                    CustomerAddressId = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CustomerId = table.Column<long>(type: "bigint", nullable: false),
-                    nvarchar20 = table.Column<string>(name: "nvarchar(20)", type: "nvarchar(max)", nullable: true),
-                    nvarchar200 = table.Column<string>(name: "nvarchar(200)", type: "nvarchar(max)", nullable: true),
-                    nvarchar250 = table.Column<string>(name: "nvarchar(250)", type: "nvarchar(max)", nullable: true),
-                    nvarchar400 = table.Column<string>(name: "nvarchar(400)", type: "nvarchar(max)", nullable: true),
-                    CityId = table.Column<int>(type: "int", nullable: false),
-                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
-                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
-                    Active = table.Column<bool>(type: "bit", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CustomerAddress", x => x.CustomerAddressId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Personal_Information",
                 columns: table => new
                 {
                     PersonalInformationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nvarchar20 = table.Column<string>(name: "nvarchar(20)", type: "nvarchar(max)", nullable: true),
-                    nvarchar200 = table.Column<string>(name: "nvarchar(200)", type: "nvarchar(max)", nullable: true),
-                    nvarchar500 = table.Column<string>(name: "nvarchar(500)", type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    IndividualResistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    PhoneNumbers = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    PostalCode = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    AddressNumber = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    AddressComplement = table.Column<string>(type: "nvarchar(500)", nullable: true),
+                    Neighborhood = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     CityId = table.Column<int>(type: "int", nullable: true),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
@@ -248,7 +222,7 @@ namespace Context.Migrations
                 {
                     ClaimId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     TypeFunctionClaim = table.Column<int>(type: "int", nullable: false),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
@@ -281,7 +255,7 @@ namespace Context.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CurrentNumberNfe = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
-                    nvarchar200 = table.Column<string>(name: "nvarchar(200)", type: "nvarchar(max)", nullable: false),
+                    VersionNfe = table.Column<string>(type: "nvarchar(200)", nullable: false),
                     EnvironmentNFE = table.Column<int>(type: "int", nullable: false),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
@@ -319,10 +293,13 @@ namespace Context.Migrations
                     CustomerId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CompnayId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    nvarchar200 = table.Column<string>(name: "nvarchar(200)", type: "nvarchar(max)", nullable: true),
+                    TradingName = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    FantasyName = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     TypeCustomer = table.Column<int>(type: "int", nullable: false),
-                    nvarchar20 = table.Column<string>(name: "nvarchar(20)", type: "nvarchar(max)", nullable: true),
-                    nvarchar100 = table.Column<string>(name: "nvarchar(100)", type: "nvarchar(max)", nullable: true),
+                    CpfCnpj = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    StateRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    MunicipalityRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    Suframa = table.Column<string>(type: "nvarchar(100)", nullable: true),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
@@ -358,7 +335,7 @@ namespace Context.Migrations
                 {
                     ProfileId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nvarchar200 = table.Column<string>(name: "nvarchar(200)", type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
@@ -388,8 +365,9 @@ namespace Context.Migrations
                 {
                     StateId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nvarchar200 = table.Column<string>(name: "nvarchar(200)", type: "nvarchar(max)", nullable: true),
-                    nvarchar20 = table.Column<string>(name: "nvarchar(20)", type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    FederativeUnit = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    ExternalCode = table.Column<string>(type: "nvarchar(20)", nullable: true),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
@@ -451,7 +429,8 @@ namespace Context.Migrations
                 {
                     CityId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nvarchar200 = table.Column<string>(name: "nvarchar(200)", type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    ExternalCode = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     StateId = table.Column<int>(type: "int", nullable: false),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
@@ -467,6 +446,87 @@ namespace Context.Migrations
                         column: x => x.StateId,
                         principalTable: "State",
                         principalColumn: "StateId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users_x_Claims",
+                columns: table => new
+                {
+                    Users_x_ClaimsId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ClaimId = table.Column<int>(type: "int", nullable: false),
+                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
+                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users_x_Claims", x => x.Users_x_ClaimsId);
+                    table.ForeignKey(
+                        name: "FK_Users_x_Claims_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Users_x_Claims_Claim_ClaimId",
+                        column: x => x.ClaimId,
+                        principalTable: "Claim",
+                        principalColumn: "ClaimId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CustomerAddress",
+                columns: table => new
+                {
+                    CustomerAddressId = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerId = table.Column<long>(type: "bigint", nullable: false),
+                    CellPhone = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    PhoneNumbers = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    PostalCode = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(250)", nullable: true),
+                    AddressNumber = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    AddressComplement = table.Column<string>(type: "nvarchar(400)", nullable: true),
+                    Neighborhood = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    CityId = table.Column<int>(type: "int", nullable: false),
+                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
+                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerAddress", x => x.CustomerAddressId);
+                    table.ForeignKey(
+                        name: "FK_CustomerAddress_City_CityId",
+                        column: x => x.CityId,
+                        principalTable: "City",
+                        principalColumn: "CityId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CustomerAddress_Customer_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customer",
+                        principalColumn: "CustomerId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CustomerAddress_Personal_Information_UserIDCreate",
+                        column: x => x.UserIDCreate,
+                        principalTable: "Personal_Information",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CustomerAddress_Personal_Information_UserIDLastUpdate",
+                        column: x => x.UserIDLastUpdate,
+                        principalTable: "Personal_Information",
+                        principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -601,6 +661,16 @@ namespace Context.Migrations
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CustomerAddress_UserIDCreate",
+                table: "CustomerAddress",
+                column: "UserIDCreate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CustomerAddress_UserIDLastUpdate",
+                table: "CustomerAddress",
+                column: "UserIDLastUpdate");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Employee_CompanyId",
                 table: "Employee",
                 column: "CompanyId");
@@ -624,6 +694,11 @@ namespace Context.Migrations
                 name: "IX_Personal_Information_CityId",
                 table: "Personal_Information",
                 column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Personal_Information_UserId",
+                table: "Personal_Information",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Profile_UserIDCreate",
@@ -693,7 +768,7 @@ namespace Context.Migrations
                 column: "UserId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_AspNetUserClaims_AspNetUsers_UserId",
@@ -701,7 +776,7 @@ namespace Context.Migrations
                 column: "UserId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_AspNetUserLogins_AspNetUsers_UserId",
@@ -709,7 +784,7 @@ namespace Context.Migrations
                 column: "UserId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_AspNetUserTokens_AspNetUsers_UserId",
@@ -717,7 +792,7 @@ namespace Context.Migrations
                 column: "UserId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Employee_AspNetUsers_UserId",
@@ -744,35 +819,11 @@ namespace Context.Migrations
                 onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Users_x_Claims_AspNetUsers_UserId",
-                table: "Users_x_Claims",
+                name: "FK_Personal_Information_AspNetUsers_UserId",
+                table: "Personal_Information",
                 column: "UserId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Users_x_Claims_Claim_ClaimId",
-                table: "Users_x_Claims",
-                column: "ClaimId",
-                principalTable: "Claim",
-                principalColumn: "ClaimId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_CustomerAddress_City_CityId",
-                table: "CustomerAddress",
-                column: "CityId",
-                principalTable: "City",
-                principalColumn: "CityId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_CustomerAddress_Customer_CustomerId",
-                table: "CustomerAddress",
-                column: "CustomerId",
-                principalTable: "Customer",
-                principalColumn: "CustomerId",
                 onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
@@ -786,6 +837,14 @@ namespace Context.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Profile_Personal_Information_UserIDCreate",
+                table: "Profile");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Profile_Personal_Information_UserIDLastUpdate",
+                table: "Profile");
+
             migrationBuilder.DropForeignKey(
                 name: "FK_State_Personal_Information_UserIDCreate",
                 table: "State");
@@ -828,16 +887,10 @@ namespace Context.Migrations
                 name: "Customer");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
                 name: "Claim");
 
             migrationBuilder.DropTable(
                 name: "Company");
-
-            migrationBuilder.DropTable(
-                name: "Profile");
 
             migrationBuilder.DropTable(
                 name: "Account");
@@ -846,7 +899,13 @@ namespace Context.Migrations
                 name: "Personal_Information");
 
             migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
                 name: "City");
+
+            migrationBuilder.DropTable(
+                name: "Profile");
 
             migrationBuilder.DropTable(
                 name: "State");

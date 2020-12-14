@@ -1,4 +1,5 @@
 ﻿using Model.Models.General;
+using Model.Models.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,23 +13,28 @@ namespace Model.Models.General
     {
         [Key]
         public int PersonalInformationId { get; set; }
-        [Column("nvarchar(20)")]
+
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+        public User User { get; set; }
+
+        [Column(TypeName = "nvarchar(20)")]
         public string IndividualResistration { get; set; }
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string PhoneNumbers { get; set; }
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string PostalCode { get; set; }
-        [Column("nvarchar(200)")]
+        [Column(TypeName = "nvarchar(200)")]
         public string Address { get; set; }
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string AddressNumber { get; set; }
-        [Column("nvarchar(500)")]
+        [Column(TypeName = "nvarchar(500)")]
         public string AddressComplement { get; set; }
-        [Column("nvarchar(200)")]
+        [Column(TypeName = "nvarchar(200)")]
         public string Neighborhood { get; set; }
 
         [ForeignKey("City")]
-        public int? CityId { get; set; }        
-        public City City { get; set; }
+        public int? CityId { get; set; }
+        public City City { get; set; }          
     }
 }

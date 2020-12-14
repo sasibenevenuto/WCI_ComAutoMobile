@@ -45,8 +45,10 @@ namespace WCI_ComAutoMobile
 
             services.Configure<Settings>(options => Configuration.GetSection("Settings").Bind(options));
 
+            //var connectionString = MD5Encryption.Decode(settings.ConnectionString);
+
             services.AddDbContext<SolutionContext>(options =>
-               options.UseSqlServer(MD5Encryption.Decode(settings.ConnectionString)));
+               options.UseSqlServer(settings.ConnectionString));
 
             services.AddIdentity<User, IdentityRole>()
                .AddEntityFrameworkStores<SolutionContext>()

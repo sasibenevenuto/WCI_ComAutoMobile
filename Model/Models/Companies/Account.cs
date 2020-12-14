@@ -17,7 +17,7 @@ namespace Model.Models.Companies
         public List<Company> Companies { get; set; }
 
         #region .:: PesonalInformation ::.
-        [ForeignKey("PersonalInformationUser")]
+        [ForeignKey("PersonalInformationCreate")]
         public override int UserIDCreate { get; set; }
         public PersonalInformation PersonalInformationCreate { get; set; }
         [ForeignKey("PersonalInformationUpdate")]

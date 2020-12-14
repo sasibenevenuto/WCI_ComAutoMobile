@@ -12,12 +12,12 @@ namespace Model.Models.General
         [Key]
         public int StateId { get; set; }
 
-        [Column("nvarchar(200)")]
+        [Column(TypeName = "nvarchar(200)")]
         public string Name { get; set; }
 
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string FederativeUnit { get; set; }
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string ExternalCode { get; set; }
 
         #region .:: Many-To-One ::.
@@ -25,9 +25,9 @@ namespace Model.Models.General
         #endregion
 
         #region .:: PesonalInformation ::.
-        [ForeignKey("PersonalInformationUser")]
+        [ForeignKey("PersonalInformationCreate")]
         public override int UserIDCreate { get; set; }
-        public PersonalInformation PersonalInformationUser { get; set; }
+        public PersonalInformation PersonalInformationCreate { get; set; }
         [ForeignKey("PersonalInformationUpdate")]
         public override int UserIDLastUpdate { get; set; }
         public PersonalInformation PersonalInformationUpdate { get; set; }

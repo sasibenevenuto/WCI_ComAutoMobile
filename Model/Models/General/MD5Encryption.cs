@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -8,21 +7,21 @@ namespace Model.Models.General
     public static class MD5Encryption
     {
         private static string myKey = "workingCodeInformatica";
-        public static string Encode(string input)
+        public static string Encode(string inputValue)
         {
             TripleDESCryptoServiceProvider tripledescryptoserviceprovider = new TripleDESCryptoServiceProvider();
             MD5CryptoServiceProvider md5cryptoserviceprovider = new MD5CryptoServiceProvider();
 
             try
             {
-                if (input.Trim() != "")
+                if (inputValue.Trim() != "")
                 {
                     //Aqui vc inclui uma chave qualquer para servir de base para cifrar, que deve ser a mesma no método Decodificar
                     tripledescryptoserviceprovider.Key = md5cryptoserviceprovider.ComputeHash(ASCIIEncoding.ASCII.GetBytes(myKey));
                     tripledescryptoserviceprovider.Mode = CipherMode.ECB;
                     ICryptoTransform desdencrypt = tripledescryptoserviceprovider.CreateEncryptor();
                     ASCIIEncoding MyASCIIEncoding = new ASCIIEncoding();
-                    byte[] buff = Encoding.ASCII.GetBytes(input);
+                    byte[] buff = Encoding.ASCII.GetBytes(inputValue);
 
                     return Convert.ToBase64String(desdencrypt.TransformFinalBlock(buff, 0, buff.Length));
 
@@ -44,19 +43,19 @@ namespace Model.Models.General
 
         }
 
-        public static string Decode(string input)
+        public static string Decode(string inputValue)
         {
             TripleDESCryptoServiceProvider tripledescryptoserviceprovider = new TripleDESCryptoServiceProvider();
             MD5CryptoServiceProvider md5cryptoserviceprovider = new MD5CryptoServiceProvider();
 
             try
             {
-                if (input.Trim() != "")
+                if (inputValue.Trim() != "")
                 {
                     tripledescryptoserviceprovider.Key = md5cryptoserviceprovider.ComputeHash(ASCIIEncoding.ASCII.GetBytes(myKey));
                     tripledescryptoserviceprovider.Mode = CipherMode.ECB;
                     ICryptoTransform desdencrypt = tripledescryptoserviceprovider.CreateDecryptor();
-                    byte[] buff = Convert.FromBase64String(input);
+                    byte[] buff = Convert.FromBase64String(inputValue);
 
                     return ASCIIEncoding.ASCII.GetString(desdencrypt.TransformFinalBlock(buff, 0, buff.Length));
                 }
@@ -65,9 +64,9 @@ namespace Model.Models.General
                     return "";
                 }
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                throw exception;
+                throw ex;
             }
             finally
             {

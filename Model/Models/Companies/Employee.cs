@@ -22,13 +22,13 @@ namespace Model.Models.Companies
         public string UserId { get; set; }
         public User User { get; set; }
 
-        [Column("nvarchar(200)")]
+        [Column(TypeName = "nvarchar(200)")]
         public string Post { get; set; }
 
         #region .:: PesonalInformation ::.
-        [ForeignKey("PersonalInformationUser")]
+        [ForeignKey("PersonalInformationCreate")]
         public override int UserIDCreate { get; set; }
-        public PersonalInformation PersonalInformationUser { get; set; }
+        public PersonalInformation PersonalInformationCreate { get; set; }
         [ForeignKey("PersonalInformationUpdate")]
         public override int UserIDLastUpdate { get; set; }
         public PersonalInformation PersonalInformationUpdate { get; set; }

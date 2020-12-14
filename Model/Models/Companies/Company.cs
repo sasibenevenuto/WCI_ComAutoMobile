@@ -17,50 +17,50 @@ namespace Model.Models.Companies
         public Guid AccountId { get; set; }
         public Account Account { get; set; }
 
-        [Column("nvarchar(200)")]        
+        [Column(TypeName = "nvarchar(200)")]        
         public string TradingName { get; set; }
 
-        [Column("nvarchar(200)")]
+        [Column(TypeName = "nvarchar(200)")]
         public string FantasyName { get; set; }
 
-        [Column("nvarchar(20)")]        
+        [Column(TypeName = "nvarchar(20)")]        
         public string CNPJ { get; set; }
 
-        [Column("nvarchar(20)")]        
+        [Column(TypeName = "nvarchar(20)")]        
         public string StateRegistration { get; set; }
 
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string CNAE { get; set; }
 
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string MunicipalityRegistration { get; set; }
 
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string StateRegistrationReplaceTributary { get; set; }
 
-        [Column("nvarchar(max)")]
+        [Column(TypeName = "nvarchar(max)")]
         public string UrlLogo { get; set; }
 
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string CellPhone { get; set; }
 
-        [Column("nvarchar(200)")]
+        [Column(TypeName = "nvarchar(200)")]
         public string PhoneNumbers { get; set; }
 
         #region .:: Address :..
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string PostalCode { get; set; }
 
-        [Column("nvarchar(250)")]        
+        [Column(TypeName = "nvarchar(250)")]        
         public string Address { get; set; }
 
-        [Column("nvarchar(20)")]        
+        [Column(TypeName = "nvarchar(20)")]        
         public string AddressNumber { get; set; }
 
-        [Column("nvarchar(250)")]
+        [Column(TypeName = "nvarchar(250)")]
         public string AddressComplement { get; set; }
 
-        [Column("nvarchar(200)")]        
+        [Column(TypeName = "nvarchar(200)")]        
         public string Neighborhood { get; set; }
 
         [ForeignKey("City")]
@@ -69,9 +69,9 @@ namespace Model.Models.Companies
         #endregion
 
         #region .:: PesonalInformation ::.
-        [ForeignKey("PersonalInformationUser")]
+        [ForeignKey("PersonalInformationCreate")]
         public override int UserIDCreate { get; set; }
-        public PersonalInformation PersonalInformationUser { get; set; }
+        public PersonalInformation PersonalInformationCreate { get; set; }
         [ForeignKey("PersonalInformationUpdate")]
         public override int UserIDLastUpdate { get; set; }
         public PersonalInformation PersonalInformationUpdate { get; set; }

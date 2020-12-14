@@ -19,36 +19,34 @@ namespace Model.Models.Customers
         public Guid CompnayId { get; set; }
         public Company Company { get; set; }
 
-        [Column("nvarchar(200)")]
+        [Column(TypeName = "nvarchar(200)")]
         public string TradingName { get; set; }
 
-        [Column("nvarchar(200)")]
+        [Column(TypeName = "nvarchar(200)")]
         public string FantasyName { get; set; }
 
         public ETypeCustomer TypeCustomer { get; set; }
 
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string CpfCnpj { get; set; }
 
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string StateRegistration { get; set; }
 
-        [Column("nvarchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string MunicipalityRegistration { get; set; }
 
-        [Column("nvarchar(100)")]
+        [Column(TypeName = "nvarchar(100)")]
         public string Suframa { get; set; }
 
 
 
         #region .:: PesonalInformation ::.
-        [ScaffoldColumn(false), ForeignKey("PersonalInformationUser")]
-        public override int UserIDCreate { get; set; }
-        [ScaffoldColumn(false)]
-        public PersonalInformation PersonalInformationUser { get; set; }
-        [ScaffoldColumn(false), ForeignKey("PersonalInformationUpdate")]
-        public override int UserIDLastUpdate { get; set; }
-        [ScaffoldColumn(false)]
+        [ForeignKey("PersonalInformationCreate")]
+        public override int UserIDCreate { get; set; }        
+        public PersonalInformation PersonalInformationCreate { get; set; }
+        [ForeignKey("PersonalInformationUpdate")]
+        public override int UserIDLastUpdate { get; set; }       
         public PersonalInformation PersonalInformationUpdate { get; set; }
         #endregion
 

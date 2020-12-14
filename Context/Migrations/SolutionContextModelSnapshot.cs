@@ -193,32 +193,22 @@ namespace Context.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Address")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(250)");
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("AddressComplement")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(250)");
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("AddressNumber")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("CNAE")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("CNPJ")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("CellPhone")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("CityId")
                         .HasColumnType("int");
@@ -227,45 +217,34 @@ namespace Context.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FantasyName")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTime>("ModifieldDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("MunicipalityRegistration")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Neighborhood")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("PhoneNumbers")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("PostalCode")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("StateRegistration")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("StateRegistrationReplaceTributary")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("TradingName")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("UrlLogo")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserIDCreate")
                         .HasColumnType("int");
@@ -319,8 +298,7 @@ namespace Context.Migrations
 
                     b.Property<string>("VersionNfe")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("CompanyConfigNFeId");
 
@@ -354,8 +332,7 @@ namespace Context.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Post")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("UserIDCreate")
                         .HasColumnType("int");
@@ -393,38 +370,28 @@ namespace Context.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CpfCnpj")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FantasyName")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTime>("ModifieldDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("MunicipalityRegistration")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("StateRegistration")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Suframa")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("TradingName")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("TypeCustomer")
                         .HasColumnType("int");
@@ -457,22 +424,16 @@ namespace Context.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(250)");
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("AddressComplement")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(400)");
+                        .HasColumnType("nvarchar(400)");
 
                     b.Property<string>("AddressNumber")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("CellPhone")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("CityId")
                         .HasColumnType("int");
@@ -487,18 +448,13 @@ namespace Context.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Neighborhood")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("PhoneNumbers")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("PostalCode")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("UserIDCreate")
                         .HasColumnType("int");
@@ -511,6 +467,10 @@ namespace Context.Migrations
                     b.HasIndex("CityId");
 
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("UserIDCreate");
+
+                    b.HasIndex("UserIDLastUpdate");
 
                     b.ToTable("CustomerAddress");
                 });
@@ -529,17 +489,13 @@ namespace Context.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ExternalCode")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTime>("ModifieldDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("StateId")
                         .HasColumnType("int");
@@ -568,18 +524,13 @@ namespace Context.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Address")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("AddressComplement")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(500)");
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("AddressNumber")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int?>("CityId")
                         .HasColumnType("int");
@@ -588,25 +539,19 @@ namespace Context.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("IndividualResistration")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime>("ModifieldDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Neighborhood")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("PhoneNumbers")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("PostalCode")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("UserIDCreate")
                         .HasColumnType("int");
@@ -614,9 +559,14 @@ namespace Context.Migrations
                     b.Property<int>("UserIDLastUpdate")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("PersonalInformationId");
 
                     b.HasIndex("CityId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Personal_Information");
                 });
@@ -635,21 +585,16 @@ namespace Context.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ExternalCode")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("FederativeUnit")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime>("ModifieldDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("UserIDCreate")
                         .HasColumnType("int");
@@ -680,7 +625,7 @@ namespace Context.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTime>("ModifieldDate")
                         .HasColumnType("datetime2");
@@ -717,8 +662,7 @@ namespace Context.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTime>("ModifieldDate")
                         .HasColumnType("datetime2");
@@ -898,21 +842,21 @@ namespace Context.Migrations
 
             modelBuilder.Entity("Model.Models.Companies.Account", b =>
                 {
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("PersonalInformationUpdate");
+                    b.Navigation("PersonalInformationCreate");
 
-                    b.Navigation("PersonalInformationUser");
+                    b.Navigation("PersonalInformationUpdate");
                 });
 
             modelBuilder.Entity("Model.Models.Companies.Company", b =>
@@ -926,28 +870,28 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.General.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Account");
 
                     b.Navigation("City");
 
-                    b.Navigation("PersonalInformationUpdate");
+                    b.Navigation("PersonalInformationCreate");
 
-                    b.Navigation("PersonalInformationUser");
+                    b.Navigation("PersonalInformationUpdate");
                 });
 
             modelBuilder.Entity("Model.Models.Companies.CompanyConfigNFe", b =>
@@ -955,26 +899,26 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.Companies.Company", "Company")
                         .WithOne("CompanyConfigNFe")
                         .HasForeignKey("Model.Models.Companies.CompanyConfigNFe", "CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Company");
 
-                    b.Navigation("PersonalInformationUpdate");
+                    b.Navigation("PersonalInformationCreate");
 
-                    b.Navigation("PersonalInformationUser");
+                    b.Navigation("PersonalInformationUpdate");
                 });
 
             modelBuilder.Entity("Model.Models.Companies.Employee", b =>
@@ -982,30 +926,31 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.Companies.Company", "Company")
                         .WithMany("Employees")
                         .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.Identity.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Company");
 
-                    b.Navigation("PersonalInformationUpdate");
+                    b.Navigation("PersonalInformationCreate");
 
-                    b.Navigation("PersonalInformationUser");
+                    b.Navigation("PersonalInformationUpdate");
 
                     b.Navigation("User");
                 });
@@ -1015,26 +960,26 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.Companies.Company", "Company")
                         .WithMany()
                         .HasForeignKey("CompnayId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Company");
 
-                    b.Navigation("PersonalInformationUpdate");
+                    b.Navigation("PersonalInformationCreate");
 
-                    b.Navigation("PersonalInformationUser");
+                    b.Navigation("PersonalInformationUpdate");
                 });
 
             modelBuilder.Entity("Model.Models.Customers.CustomerAddress", b =>
@@ -1042,18 +987,34 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.General.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.Customers.Customer", "Customer")
                         .WithMany("CustomersAddress")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
+                        .WithMany()
+                        .HasForeignKey("UserIDCreate")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                        .WithMany()
+                        .HasForeignKey("UserIDLastUpdate")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("City");
 
                     b.Navigation("Customer");
+
+                    b.Navigation("PersonalInformationCreate");
+
+                    b.Navigation("PersonalInformationUpdate");
                 });
 
             modelBuilder.Entity("Model.Models.General.City", b =>
@@ -1061,7 +1022,7 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.General.State", "State")
                         .WithMany("Cities")
                         .HasForeignKey("StateId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("State");
@@ -1071,28 +1032,36 @@ namespace Context.Migrations
                 {
                     b.HasOne("Model.Models.General.City", "City")
                         .WithMany()
-                        .HasForeignKey("CityId");
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Model.Models.Identity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("City");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Model.Models.General.State", b =>
                 {
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("PersonalInformationUpdate");
+                    b.Navigation("PersonalInformationCreate");
 
-                    b.Navigation("PersonalInformationUser");
+                    b.Navigation("PersonalInformationUpdate");
                 });
 
             modelBuilder.Entity("Model.Models.Identity.Claim", b =>
@@ -1100,13 +1069,13 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("PersonalInformationUpdate");
@@ -1116,21 +1085,21 @@ namespace Context.Migrations
 
             modelBuilder.Entity("Model.Models.Identity.Profile", b =>
                 {
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("PersonalInformationUpdate");
+                    b.Navigation("PersonalInformationCreate");
 
-                    b.Navigation("PersonalInformationUser");
+                    b.Navigation("PersonalInformationUpdate");
                 });
 
             modelBuilder.Entity("Model.Models.Identity.User", b =>
@@ -1138,7 +1107,7 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.Identity.Profile", "Profile")
                         .WithMany()
                         .HasForeignKey("ProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Profile");
@@ -1149,12 +1118,13 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.Identity.Claim", "Claim")
                         .WithMany()
                         .HasForeignKey("ClaimId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Model.Models.Identity.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Claim");
 

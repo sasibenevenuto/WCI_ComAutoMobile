@@ -10,6 +10,7 @@ namespace Model.Models.Identity
     {
         [Key]
         public int ClaimId { get; set; }
+        [Column(TypeName = "nvarchar(200)")]
         public string Description { get; set; }
         public ETypeFunctionClaim TypeFunctionClaim { get; set; }
 
