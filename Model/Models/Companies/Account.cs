@@ -1,4 +1,5 @@
-﻿using Model.Models.General;
+﻿using Microsoft.EntityFrameworkCore;
+using Model.Models.General;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,13 +17,11 @@ namespace Model.Models.Companies
         public List<Company> Companies { get; set; }
 
         #region .:: PesonalInformation ::.
-        [ScaffoldColumn(false), ForeignKey("PersonalInformationUser")]
-        public override int UserID { get; set; }
-        [ScaffoldColumn(false)]
-        public PersonalInformation PersonalInformationUser { get; set; }
-        [ScaffoldColumn(false), ForeignKey("PersonalInformationUpdate")]
+        [ForeignKey("PersonalInformationUser")]
+        public override int UserIDCreate { get; set; }
+        public PersonalInformation PersonalInformationCreate { get; set; }
+        [ForeignKey("PersonalInformationUpdate")]
         public override int UserIDLastUpdate { get; set; }
-        [ScaffoldColumn(false)]
         public PersonalInformation PersonalInformationUpdate { get; set; }
         #endregion
 

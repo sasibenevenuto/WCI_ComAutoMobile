@@ -24,5 +24,14 @@ namespace Model.Models.Companies
 
         [Column("nvarchar(200)")]
         public string Post { get; set; }
+
+        #region .:: PesonalInformation ::.
+        [ForeignKey("PersonalInformationUser")]
+        public override int UserIDCreate { get; set; }
+        public PersonalInformation PersonalInformationUser { get; set; }
+        [ForeignKey("PersonalInformationUpdate")]
+        public override int UserIDLastUpdate { get; set; }
+        public PersonalInformation PersonalInformationUpdate { get; set; }
+        #endregion
     }
 }

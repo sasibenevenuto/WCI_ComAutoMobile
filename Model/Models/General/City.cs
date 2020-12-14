@@ -12,7 +12,7 @@ namespace Model.Models.General
         [Key]
         public int CityId { get; set; }
 
-        [Required, Column("nvarchar(200)")]
+        [Column("nvarchar(200)")]
         public string Name { get; set; }
 
         [Column("nvarchar(200)")]
@@ -22,16 +22,13 @@ namespace Model.Models.General
         public int StateId { get; set; }
         public State State { get; set; }
 
-
-        #region .:: PesonalInformation ::.
-        [ScaffoldColumn(false)]
-        public override int UserID { get; set; }
-        [ScaffoldColumn(false)]
-        public PersonalInformation PersonalInformationUser { get; set; }
-        [ScaffoldColumn(false)]
-        public override int UserIDLastUpdate { get; set; }
-        [ScaffoldColumn(false)]
-        public PersonalInformation PersonalInformationUpdate { get; set; }
-        #endregion
+        //#region .:: PesonalInformation ::.
+        //[ForeignKey("PersonalInformationUser")]
+        //public override int UserID { get; set; }
+        //public PersonalInformation PersonalInformationUser { get; set; }
+        //[ForeignKey("PersonalInformationUpdate")]
+        //public override int UserIDLastUpdate { get; set; }
+        //public PersonalInformation PersonalInformationUpdate { get; set; }
+        //#endregion
     }
 }

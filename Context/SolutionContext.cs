@@ -4,6 +4,7 @@ using Model.Models.Companies;
 using Model.Models.Customers;
 using Model.Models.General;
 using Model.Models.Identity;
+using System.Linq;
 
 namespace Context
 {
@@ -30,13 +31,13 @@ namespace Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);            
 
-            //modelBuilder.Entity<Atividades_x_Proposta>()
-            //    .HasOne(ap => ap.Proposta)
-            //    .WithMany(ap => ap.AtividadesProposta)
-            //    .HasForeignKey(u => u.IdProposta)
-            //    .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Company>()
+                .HasOne(ap => ap.Account)
+                .WithMany(ap => ap.Companies)
+                .HasForeignKey(u => u.AccountId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

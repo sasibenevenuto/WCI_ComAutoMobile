@@ -17,16 +17,16 @@ namespace Model.Models.Companies
         public Guid AccountId { get; set; }
         public Account Account { get; set; }
 
-        [Required, Column("nvarchar(200)")]        
+        [Column("nvarchar(200)")]        
         public string TradingName { get; set; }
 
         [Column("nvarchar(200)")]
         public string FantasyName { get; set; }
 
-        [Required, Column("nvarchar(20)")]        
+        [Column("nvarchar(20)")]        
         public string CNPJ { get; set; }
 
-        [Required, Column("nvarchar(20)")]        
+        [Column("nvarchar(20)")]        
         public string StateRegistration { get; set; }
 
         [Column("nvarchar(20)")]
@@ -51,16 +51,16 @@ namespace Model.Models.Companies
         [Column("nvarchar(20)")]
         public string PostalCode { get; set; }
 
-        [Required, Column("nvarchar(250)")]        
+        [Column("nvarchar(250)")]        
         public string Address { get; set; }
 
-        [Required, Column("nvarchar(20)")]        
+        [Column("nvarchar(20)")]        
         public string AddressNumber { get; set; }
 
         [Column("nvarchar(250)")]
         public string AddressComplement { get; set; }
 
-        [Required, Column("nvarchar(200)")]        
+        [Column("nvarchar(200)")]        
         public string Neighborhood { get; set; }
 
         [ForeignKey("City")]
@@ -69,13 +69,11 @@ namespace Model.Models.Companies
         #endregion
 
         #region .:: PesonalInformation ::.
-        [ScaffoldColumn(false), ForeignKey("PersonalInformationUser")]
-        public override int UserID { get; set; }
-        [ScaffoldColumn(false)]
+        [ForeignKey("PersonalInformationUser")]
+        public override int UserIDCreate { get; set; }
         public PersonalInformation PersonalInformationUser { get; set; }
-        [ScaffoldColumn(false), ForeignKey("PersonalInformationUpdate")]
+        [ForeignKey("PersonalInformationUpdate")]
         public override int UserIDLastUpdate { get; set; }
-        [ScaffoldColumn(false)]
         public PersonalInformation PersonalInformationUpdate { get; set; }
         #endregion
 

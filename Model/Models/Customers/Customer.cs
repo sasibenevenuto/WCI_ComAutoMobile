@@ -19,15 +19,15 @@ namespace Model.Models.Customers
         public Guid CompnayId { get; set; }
         public Company Company { get; set; }
 
-        [Required, Column("nvarchar(200)")]
+        [Column("nvarchar(200)")]
         public string TradingName { get; set; }
 
-        [Required, Column("nvarchar(200)")]
+        [Column("nvarchar(200)")]
         public string FantasyName { get; set; }
 
         public ETypeCustomer TypeCustomer { get; set; }
 
-        [Required, Column("nvarchar(20)")]
+        [Column("nvarchar(20)")]
         public string CpfCnpj { get; set; }
 
         [Column("nvarchar(20)")]
@@ -43,7 +43,7 @@ namespace Model.Models.Customers
 
         #region .:: PesonalInformation ::.
         [ScaffoldColumn(false), ForeignKey("PersonalInformationUser")]
-        public override int UserID { get; set; }
+        public override int UserIDCreate { get; set; }
         [ScaffoldColumn(false)]
         public PersonalInformation PersonalInformationUser { get; set; }
         [ScaffoldColumn(false), ForeignKey("PersonalInformationUpdate")]

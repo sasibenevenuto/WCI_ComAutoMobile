@@ -1,8 +1,5 @@
 ﻿using Model.Models.Companies;
-using Repository.General;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Repository.General.Interfaces;
 
 namespace Repository.Companies.Interfaces
 {

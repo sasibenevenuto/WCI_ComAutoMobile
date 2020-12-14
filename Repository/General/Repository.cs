@@ -1,11 +1,10 @@
 ﻿using Dapper;
-using Microsoft.Extensions.Options;
 using Model.Models.General;
+using Repository.General.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository.General
@@ -25,119 +24,107 @@ namespace Repository.General
         #endregion
 
         #region .:: Crud ::.
-        public async Task<TEntity> Add(TEntity entity, string query)
+        public async Task<TEntity> AddAsync(TEntity entity, string query)
         {
             entity = BeforAdd(entity);
-            using (var con = new SqlConnection(_settings.ConnectionString))
+            using var con = new SqlConnection(_settings.ConnectionString);
+            try
             {
-
-                try
-                {
-                    con.Open();
-                    entity = await con.QuerySingleAsync<TEntity>(query, entity);
-                }
-                catch (Exception ex)
-                {
-                    con.BeginTransaction().Rollback();
-                    throw new Exception(ex.InnerException.InnerException.Message.ToString());
-                }
-                finally
-                {
-                    con.Close();
-                }
-                return entity;
+                con.Open();
+                entity = await con.QuerySingleAsync<TEntity>(query, entity);
             }
+            catch (Exception ex)
+            {
+                con.BeginTransaction().Rollback();
+                throw new Exception(ex.InnerException.InnerException.Message.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return entity;
         }
 
-        public async Task Delete(string query)
+        public async Task DeleteAsync(string query)
         {
-            using (var con = new SqlConnection(_settings.ConnectionString))
+            using var con = new SqlConnection(_settings.ConnectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    await con.ExecuteAsync(query);
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                await con.ExecuteAsync(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
-        public async Task<List<TEntity>> GetList(TEntity entity, string query)
+        public async Task<List<TEntity>> GetListAsync(TEntity entity, string query)
         {
             List<TEntity> entityList = new List<TEntity>();
 
-            using (var con = new SqlConnection(_settings.ConnectionString))
+            using var con = new SqlConnection(_settings.ConnectionString);
+            try
             {
-                try
-                {
-                    con.Open();
+                con.Open();
 
-                    entityList = (await con.QueryAsync<TEntity>(query)).ToList();
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                finally
-                {
-                    con.Close();
-                }
-                return entityList;
+                entityList = (await con.QueryAsync<TEntity>(query)).ToList();
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return entityList;
         }
 
-        public async Task<int> GetListCount(TEntity entity, string query)
+        public async Task<int> GetListCountAsync(TEntity entity, string query)
         {
             int entityList = 0;
-            using (var con = new SqlConnection(_settings.ConnectionString))
+            using var con = new SqlConnection(_settings.ConnectionString);
+            try
             {
-                try
-                {
-                    con.Open();
+                con.Open();
 
-                    entityList = (await con.QueryAsync<TEntity>(query)).Count();
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                finally
-                {
-                    con.Close();
-                }
-                return entityList;
+                entityList = (await con.QueryAsync<TEntity>(query)).Count();
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return entityList;
         }
 
-        public async Task<TEntity> Update(TEntity entity, string query)
+        public async Task<TEntity> UpdateAsync(TEntity entity, string query)
         {
             entity = BeforUpdate(entity);
-            using (var con = new SqlConnection(_settings.ConnectionString))
+            using var con = new SqlConnection(_settings.ConnectionString);
+            try
             {
-
-                try
-                {
-                    con.Open();
-                    entity = await con.QuerySingleAsync<TEntity>(query, entity);
-                }
-                catch (Exception ex)
-                {
-                    con.BeginTransaction().Rollback();
-                    throw new Exception(ex.InnerException.InnerException.Message.ToString());
-                }
-                finally
-                {
-                    con.Close();
-                }
-                return entity;
+                con.Open();
+                entity = await con.QuerySingleAsync<TEntity>(query, entity);
             }
+            catch (Exception ex)
+            {
+                con.BeginTransaction().Rollback();
+                throw new Exception(ex.InnerException.InnerException.Message.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return entity;
         }
 
         public void Dispose()
@@ -149,11 +136,15 @@ namespace Repository.General
         #region .:: Methods Helpers ::.
         public virtual TEntity BeforAdd(TEntity entity)
         {
+            entity.Active = true;
+            entity.CreateDate = DateTime.Now;
+            entity.ModifieldDate = DateTime.Now;
             return entity;
         }
 
         public virtual TEntity BeforUpdate(TEntity entity)
         {
+            entity.ModifieldDate = DateTime.Now;
             return entity;
         }
 

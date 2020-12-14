@@ -28,7 +28,7 @@ namespace Model.Models.General
         public string Neighborhood { get; set; }
 
         [ForeignKey("City")]
-        public int? CityId { get; set; }
+        public int? CityId { get; set; }        
         public City City { get; set; }
     }
 }

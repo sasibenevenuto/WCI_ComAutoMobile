@@ -26,14 +26,12 @@ namespace Model.Models.Companies
         public EEnvironment EnvironmentNFE { get; set; }
 
         #region .:: PesonalInformation ::.
-        [ScaffoldColumn(false), ForeignKey("PersonalInformationUser")]
-        public override int UserID { get; set; }
-        [ScaffoldColumn(false)]
+        [ForeignKey("PersonalInformationUser")]
+        public override int UserIDCreate { get; set; }
         public PersonalInformation PersonalInformationUser { get; set; }
-        [ScaffoldColumn(false), ForeignKey("PersonalInformationUpdate")]
+        [ForeignKey("PersonalInformationUpdate")]
         public override int UserIDLastUpdate { get; set; }
-        [ScaffoldColumn(false)]
         public PersonalInformation PersonalInformationUpdate { get; set; }
-        #endregion      
+        #endregion    
     }
 }

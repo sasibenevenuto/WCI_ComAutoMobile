@@ -9,7 +9,7 @@ namespace Model.Models.General
         public bool Active { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime ModifieldDate { get; set; }
-        public virtual int UserID { get; set; }
+        public virtual int UserIDCreate { get; set; }
         public virtual int UserIDLastUpdate { get; set; }
     }
 }

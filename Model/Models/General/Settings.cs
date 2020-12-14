@@ -6,6 +6,11 @@ namespace Model.Models.General
 {
     public class Settings
     {
-        public string ConnectionString { get; set; }
+        private string ConnectionStringName { get; set; }
+        public string ConnectionString
+        {
+            get { return ConnectionStringName; }
+            set { ConnectionStringName = MD5Encryption.Decode(value); }
+        }
     }
 }
