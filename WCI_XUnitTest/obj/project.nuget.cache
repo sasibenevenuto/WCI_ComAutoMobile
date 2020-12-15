@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m54n+OB1KRGHZkhRTG8KRX56oMQUVFScyKTc2NtKozgB/j1jmJhNjJgCKfnqwUrGms6tKUanG6Oy1IaM1+o4AQ==",
+  "dgSpecHash": "jSAohVzoXGP9W2Yd0NZn32h6u4nfGWQo/kHXpGB2AqX/z9ZaarGAlc7+CEhKE3CkWucp++BiuQu2pYPhWd9MZg==",
   "success": true,
-  "projectFilePath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\WCI_XUnitTest\\WCI_XUnitTest.csproj",
+  "projectFilePath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\WCI_XUnitTest\\WCI_XUnitTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SAMUEL\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\SAMUEL\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

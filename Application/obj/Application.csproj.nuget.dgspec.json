@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Application\\Application.csproj": {}
+    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Application\\Application.csproj": {
+    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Application\\Application.csproj",
+        "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\SAMUEL\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Application\\obj\\",
+        "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Repository\\Repository.csproj"
+              "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Repository\\Repository.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Model\\Model.csproj": {
+    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Model\\Model.csproj",
+        "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\SAMUEL\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Model\\obj\\",
+        "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -132,14 +132,14 @@
         }
       }
     },
-    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Repository\\Repository.csproj": {
+    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Repository\\Repository.csproj",
+        "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\SAMUEL\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Repository\\obj\\",
+        "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -160,8 +160,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Model\\Model.csproj": {
-                "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Model\\Model.csproj"
+              "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\Model.csproj": {
+                "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\Model.csproj"
               }
             }
           }

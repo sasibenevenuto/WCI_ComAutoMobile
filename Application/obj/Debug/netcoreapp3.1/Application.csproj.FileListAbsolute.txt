@@ -12,3 +12,17 @@ C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Application\obj\Deb
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.dll
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.pdb
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\bin\Debug\netcoreapp3.1\Application.deps.json
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\bin\Debug\netcoreapp3.1\Application.dll
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\bin\Debug\netcoreapp3.1\Application.pdb
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\bin\Debug\netcoreapp3.1\Model.dll
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\bin\Debug\netcoreapp3.1\Repository.dll
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\bin\Debug\netcoreapp3.1\Model.pdb
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.csprojAssemblyReference.cache
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfoInputs.cache
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfo.cs
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.csproj.CoreCompileInputs.cache
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.dll
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Application\obj\Debug\netcoreapp3.1\Application.pdb

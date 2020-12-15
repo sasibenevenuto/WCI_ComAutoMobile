@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Service\\Service.csproj": {}
+    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Service\\Service.csproj": {}
   },
   "projects": {
-    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Service\\Service.csproj": {
+    "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Service\\Service.csproj",
+        "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\SAMUEL\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Service\\obj\\",
+        "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

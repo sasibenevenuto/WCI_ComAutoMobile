@@ -553,10 +553,10 @@ namespace Context.Migrations
                     b.Property<string>("PostalCode")
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("UserIDCreate")
+                    b.Property<int?>("UserIDCreate")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserIDLastUpdate")
+                    b.Property<int?>("UserIDLastUpdate")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
@@ -724,7 +724,7 @@ namespace Context.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int>("ProfileId")
+                    b.Property<int?>("ProfileId")
                         .HasColumnType("int");
 
                     b.Property<string>("SecurityStamp")
@@ -783,6 +783,10 @@ namespace Context.Migrations
                     b.HasKey("Users_x_ClaimsId");
 
                     b.HasIndex("ClaimId");
+
+                    b.HasIndex("UserIDCreate");
+
+                    b.HasIndex("UserIDLastUpdate");
 
                     b.HasIndex("UserId");
 
@@ -1107,8 +1111,7 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.Identity.Profile", "Profile")
                         .WithMany()
                         .HasForeignKey("ProfileId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Profile");
                 });
@@ -1121,12 +1124,28 @@ namespace Context.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                        .WithMany()
+                        .HasForeignKey("UserIDCreate")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                        .WithMany()
+                        .HasForeignKey("UserIDLastUpdate")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Model.Models.Identity.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Claim");
+
+                    b.Navigation("PersonalInformationUpdate");
+
+                    b.Navigation("PersonalInformationUser");
 
                     b.Navigation("User");
                 });

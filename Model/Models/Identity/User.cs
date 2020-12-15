@@ -9,7 +9,7 @@ namespace Model.Models.Identity
         public override string Id { get; set; }
 
         [ForeignKey("Profile")]
-        public int ProfileId { get; set; }
+        public int? ProfileId { get; set; }
         public Profile Profile { get; set; }
     }
 }

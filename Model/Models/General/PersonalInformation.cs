@@ -35,6 +35,9 @@ namespace Model.Models.General
 
         [ForeignKey("City")]
         public int? CityId { get; set; }
-        public City City { get; set; }          
+        public City City { get; set; }
+
+        public new int? UserIDCreate { get; set; }
+        public new int? UserIDLastUpdate { get; set; }
     }
 }

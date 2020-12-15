@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cENWd7PjGhqfMEhRkRq797uG8qa0SJhRyInT2dwl3VEr62knUjAmi8war9NhR7xnvs2xt/Epr/GUYoqjgomqkA==",
+  "dgSpecHash": "DqiJB0mT+vNnw0IUp3FgpBEbTIiXuh1mlAf//02EtlVFizI1zPtTbNzyHz6njX5ESwpvxFheZU3UXVAcH1FtyQ==",
   "success": true,
-  "projectFilePath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\WCI_ComAutoMobile\\WCI_ComAutoMobile.csproj",
+  "projectFilePath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\WCI_ComAutoMobile\\WCI_ComAutoMobile.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SAMUEL\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\SAMUEL\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+rDEw4ntYRB8ad9kMY4bnvvWRjn6fASYXkrMatqzVsvofIH8SnRNiGnFUvNmg8EOSeqrmP79zJJFJSR1Bt+SEA==",
+  "dgSpecHash": "q2U38batZdA5+SV5VQ4N9L3bpt+0sxL35aNqj6ah5S1TbsWjX1kTZ9kG+jHq1ItL1DGBL6DcOiMkFVLIPMTtRQ==",
   "success": true,
-  "projectFilePath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCI_ComAutoMobile\\Service\\Service.csproj",
+  "projectFilePath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Service\\Service.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

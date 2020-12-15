@@ -177,8 +177,8 @@ namespace Context.Migrations
                     AddressComplement = table.Column<string>(type: "nvarchar(500)", nullable: true),
                     Neighborhood = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     CityId = table.Column<int>(type: "int", nullable: true),
-                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
-                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
+                    UserIDCreate = table.Column<int>(type: "int", nullable: true),
+                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: true),
                     Active = table.Column<bool>(type: "bit", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -396,7 +396,7 @@ namespace Context.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ProfileId = table.Column<int>(type: "int", nullable: false),
+                    ProfileId = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -477,6 +477,18 @@ namespace Context.Migrations
                         column: x => x.ClaimId,
                         principalTable: "Claim",
                         principalColumn: "ClaimId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Users_x_Claims_Personal_Information_UserIDCreate",
+                        column: x => x.UserIDCreate,
+                        principalTable: "Personal_Information",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Users_x_Claims_Personal_Information_UserIDLastUpdate",
+                        column: x => x.UserIDLastUpdate,
+                        principalTable: "Personal_Information",
+                        principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -729,6 +741,16 @@ namespace Context.Migrations
                 name: "IX_Users_x_Claims_UserId",
                 table: "Users_x_Claims",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_x_Claims_UserIDCreate",
+                table: "Users_x_Claims",
+                column: "UserIDCreate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_x_Claims_UserIDLastUpdate",
+                table: "Users_x_Claims",
+                column: "UserIDLastUpdate");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Company_Account_AccountId",
