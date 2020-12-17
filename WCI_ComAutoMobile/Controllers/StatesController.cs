@@ -16,16 +16,16 @@ namespace WCI_ComAutoMobile.Controllers
     [ApiController]
     public class StatesController : ControllerBase
     {
-        private readonly IStateHandler _hanlder;
-        public StatesController(IStateHandler hanlder)
+        private readonly IStateHandler _stateHanlder;
+        public StatesController(IStateHandler stateHanlder)
         {
-            _hanlder = hanlder;
+            _stateHanlder = stateHanlder;
         }
 
         [HttpGet]
         public async Task<List<StateViewModel>> Get()
         {
-            return await _hanlder.Handler(new StateListCommand());
+            return await _stateHanlder.Handler(new StateListCommand());
         }
     }
 }

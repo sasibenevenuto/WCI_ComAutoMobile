@@ -31,7 +31,7 @@ namespace Repository.General
             try
             {
                 con.Open();
-                entity = await con.QuerySingleAsync<TEntity>(query, entity);
+                entity = await con.ExecuteScalarAsync<TEntity>(query, entity);
             }
             catch (Exception ex)
             {
@@ -45,13 +45,13 @@ namespace Repository.General
             return entity;
         }
 
-        public async Task DeleteAsync(string query)
+        public async Task DeleteAsync(TEntity entity, string query)
         {
             using var con = new SqlConnection(_settings.ConnectionString);
             try
             {
                 con.Open();
-                await con.ExecuteAsync(query);
+                await con.ExecuteScalarAsync<TEntity>(query, entity);
             }
             catch (Exception ex)
             {
@@ -113,7 +113,7 @@ namespace Repository.General
             try
             {
                 con.Open();
-                entity = await con.QuerySingleAsync<TEntity>(query, entity);
+                entity = await con.ExecuteScalarAsync<TEntity>(query, entity);
             }
             catch (Exception ex)
             {

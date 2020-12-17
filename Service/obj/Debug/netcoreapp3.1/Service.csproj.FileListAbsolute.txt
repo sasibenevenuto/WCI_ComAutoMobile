@@ -10,7 +10,6 @@ C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCI_ComAutoMobile\Service\obj\Debug\n
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Service\bin\Debug\netcoreapp3.1\Service.deps.json
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Service\bin\Debug\netcoreapp3.1\Service.dll
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Service\bin\Debug\netcoreapp3.1\Service.pdb
-C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache

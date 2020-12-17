@@ -182,7 +182,6 @@ C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\bin\De
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\obj\Debug\netcoreapp3.1\WCI_XUnitTest.csprojAssemblyReference.cache
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\obj\Debug\netcoreapp3.1\WCI_XUnitTest.AssemblyInfoInputs.cache
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\obj\Debug\netcoreapp3.1\WCI_XUnitTest.AssemblyInfo.cs
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\obj\Debug\netcoreapp3.1\WCI_XUnitTest.csproj.CoreCompileInputs.cache

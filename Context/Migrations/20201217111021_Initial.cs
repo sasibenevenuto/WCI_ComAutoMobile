@@ -290,18 +290,11 @@ namespace Context.Migrations
                 name: "Customer",
                 columns: table => new
                 {
-                    CustomerId = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CompnayId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TradingName = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    FantasyName = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    TypeCustomer = table.Column<int>(type: "int", nullable: false),
-                    CpfCnpj = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    StateRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    MunicipalityRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    Suframa = table.Column<string>(type: "nvarchar(100)", nullable: true),
-                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
-                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
+                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TradingName = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    Idade = table.Column<int>(type: "int", nullable: false),
+                    UserIDCreate = table.Column<int>(type: "int", nullable: true),
+                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: true),
                     Active = table.Column<bool>(type: "bit", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -309,12 +302,6 @@ namespace Context.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Customer", x => x.CustomerId);
-                    table.ForeignKey(
-                        name: "FK_Customer_Company_CompnayId",
-                        column: x => x.CompnayId,
-                        principalTable: "Company",
-                        principalColumn: "CompanyId",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Customer_Personal_Information_UserIDCreate",
                         column: x => x.UserIDCreate,
@@ -498,7 +485,6 @@ namespace Context.Migrations
                 {
                     CustomerAddressId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CustomerId = table.Column<long>(type: "bigint", nullable: false),
                     CellPhone = table.Column<string>(type: "nvarchar(20)", nullable: true),
                     PhoneNumbers = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     PostalCode = table.Column<string>(type: "nvarchar(20)", nullable: true),
@@ -521,12 +507,6 @@ namespace Context.Migrations
                         column: x => x.CityId,
                         principalTable: "City",
                         principalColumn: "CityId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_CustomerAddress_Customer_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customer",
-                        principalColumn: "CustomerId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_CustomerAddress_Personal_Information_UserIDCreate",
@@ -648,11 +628,6 @@ namespace Context.Migrations
                 column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Customer_CompnayId",
-                table: "Customer",
-                column: "CompnayId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Customer_UserIDCreate",
                 table: "Customer",
                 column: "UserIDCreate");
@@ -666,11 +641,6 @@ namespace Context.Migrations
                 name: "IX_CustomerAddress_CityId",
                 table: "CustomerAddress",
                 column: "CityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CustomerAddress_CustomerId",
-                table: "CustomerAddress",
-                column: "CustomerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CustomerAddress_UserIDCreate",
@@ -894,6 +864,9 @@ namespace Context.Migrations
                 name: "CompanyConfigNFe");
 
             migrationBuilder.DropTable(
+                name: "Customer");
+
+            migrationBuilder.DropTable(
                 name: "CustomerAddress");
 
             migrationBuilder.DropTable(
@@ -906,13 +879,10 @@ namespace Context.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Customer");
+                name: "Company");
 
             migrationBuilder.DropTable(
                 name: "Claim");
-
-            migrationBuilder.DropTable(
-                name: "Company");
 
             migrationBuilder.DropTable(
                 name: "Account");

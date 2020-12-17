@@ -1,3 +1,5 @@
+using Application.Handlers.Customers;
+using Application.Handlers.Customers.Interfaces;
 using Application.Handlers.General;
 using Application.Handlers.General.Interfaces;
 using Context;
@@ -11,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Model.Models.General;
 using Model.Models.Identity;
+using Repository.Customers;
+using Repository.Customers.Interfaces;
 using Repository.General;
 using Repository.General.Interfaces;
 using System;
@@ -56,9 +60,11 @@ namespace WCI_ComAutoMobile
 
             // Repositórios
             services.AddScoped<IRState, RState>();
+            services.AddScoped<IRCustomer, RCustomer>();
 
             // Hanlders
             services.AddScoped<IStateHandler, StateHandler>();
+            services.AddScoped<ICustomerHandler, CustomerHanlder>();
 
             services.AddControllers();
 

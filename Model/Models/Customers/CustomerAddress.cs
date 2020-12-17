@@ -10,9 +10,9 @@ namespace Model.Models.Customers
         [Key]
         public long CustomerAddressId { get; set; }
 
-        [ForeignKey("Customer")]
-        public long CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        //[ForeignKey("Customer")]
+        //public long CustomerId { get; set; }
+        //public Customer Customer { get; set; }
 
         [Column(TypeName ="nvarchar(20)")]
         public string CellPhone { get; set; }

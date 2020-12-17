@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Context.Migrations
 {
     [DbContext(typeof(SolutionContext))]
-    [Migration("20201215190512_Initial")]
+    [Migration("20201217111021_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -360,53 +360,32 @@ namespace Context.Migrations
 
             modelBuilder.Entity("Model.Models.Customers.Customer", b =>
                 {
-                    b.Property<long>("CustomerId")
+                    b.Property<Guid>("CustomerId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("CompnayId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CpfCnpj")
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FantasyName")
-                        .HasColumnType("nvarchar(200)");
+                    b.Property<int>("Idade")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("ModifieldDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MunicipalityRegistration")
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("StateRegistration")
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Suframa")
+                    b.Property<string>("TradingName")
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("TradingName")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<int>("TypeCustomer")
+                    b.Property<int?>("UserIDCreate")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserIDCreate")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserIDLastUpdate")
+                    b.Property<int?>("UserIDLastUpdate")
                         .HasColumnType("int");
 
                     b.HasKey("CustomerId");
-
-                    b.HasIndex("CompnayId");
 
                     b.HasIndex("UserIDCreate");
 
@@ -443,9 +422,6 @@ namespace Context.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("CustomerId")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime>("ModifieldDate")
                         .HasColumnType("datetime2");
 
@@ -467,8 +443,6 @@ namespace Context.Migrations
                     b.HasKey("CustomerAddressId");
 
                     b.HasIndex("CityId");
-
-                    b.HasIndex("CustomerId");
 
                     b.HasIndex("UserIDCreate");
 
@@ -963,25 +937,15 @@ namespace Context.Migrations
 
             modelBuilder.Entity("Model.Models.Customers.Customer", b =>
                 {
-                    b.HasOne("Model.Models.Companies.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompnayId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Company");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("PersonalInformationCreate");
 
@@ -993,12 +957,6 @@ namespace Context.Migrations
                     b.HasOne("Model.Models.General.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Model.Models.Customers.Customer", "Customer")
-                        .WithMany("CustomersAddress")
-                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -1015,8 +973,6 @@ namespace Context.Migrations
                         .IsRequired();
 
                     b.Navigation("City");
-
-                    b.Navigation("Customer");
 
                     b.Navigation("PersonalInformationCreate");
 
@@ -1162,11 +1118,6 @@ namespace Context.Migrations
                     b.Navigation("CompanyConfigNFe");
 
                     b.Navigation("Employees");
-                });
-
-            modelBuilder.Entity("Model.Models.Customers.Customer", b =>
-                {
-                    b.Navigation("CustomersAddress");
                 });
 
             modelBuilder.Entity("Model.Models.General.State", b =>

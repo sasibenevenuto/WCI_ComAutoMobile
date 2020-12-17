@@ -30,8 +30,6 @@ namespace Application.Handlers.General
 
                 throw ex;
             }
-
-
         }
     }
 }
