@@ -36,7 +36,7 @@ namespace Application.Handlers.Customers
         {
             try
             {
-                await _rCustomer.AddAsync(new Customer(command.TradingName, command.Idade), @"INSERT INTO [dbo].[Customer]
+                await _rCustomer.AddAsync(new Customer(), @"INSERT INTO [dbo].[Customer]
            ([CustomerId]
            ,[TradingName]
            ,[Idade]
