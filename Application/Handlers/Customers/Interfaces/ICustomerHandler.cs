@@ -1,8 +1,7 @@
-﻿using Application.Commands.Customers;
+﻿using Model.Commands.Customers;
 using Model.ViewModels.Customers;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Handlers.Customers.Interfaces
@@ -12,6 +11,6 @@ namespace Application.Handlers.Customers.Interfaces
         Task<List<CustomerViewModel>> Handler(CustomerListCommand command);
         Task Handler(CustomerAddCommand command);
         Task Handler(CustomerUpdateCommand command);
-        Task Handler(CustomerDeleteCommand command);
+        Task Handler(Guid customerId);
     }
 }

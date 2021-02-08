@@ -189,3 +189,4 @@ C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\obj\De
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\obj\Debug\netcoreapp3.1\WCI_XUnitTest.dll
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\obj\Debug\netcoreapp3.1\WCI_XUnitTest.pdb
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\obj\Debug\netcoreapp3.1\WCI_XUnitTest.genruntimeconfig.cache
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\WCI_XUnitTest\obj\Debug\netcoreapp3.1\WCI_XUnitTest.csprojAssemblyReference.cache

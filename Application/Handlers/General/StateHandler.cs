@@ -1,12 +1,11 @@
-﻿using Application.Commands.General;
-using Application.Handlers.General.Interfaces;
+﻿using Application.Handlers.General.Interfaces;
+using Model.Commands.General;
 using Model.Models.General;
 using Model.ViewModels.General;
 using Repository.General.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Handlers.General
@@ -23,7 +22,7 @@ namespace Application.Handlers.General
         {
             try
             {
-                return new List<StateViewModel>((await _rState.GetListAsync(new State(), "SELECT * FROM State")).Select(x => (StateViewModel)x));
+                return new List<StateViewModel>((await _rState.GetListStateAsync(new State(), "SELECT * FROM State")).Select(x => (StateViewModel)x));
             }
             catch (Exception ex)
             {

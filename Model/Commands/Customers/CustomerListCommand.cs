@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.Commands.Customers
+namespace Model.Commands.Customers
 {
     public class CustomerListCommand
     {

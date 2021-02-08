@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Application.Commands.General;
-using Application.Handlers.General;
-using Application.Handlers.General.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using Application.Handlers.General.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Model.Models.General;
+using Model.Commands.General;
 using Model.ViewModels.General;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WCI_ComAutoMobile.Controllers
 {

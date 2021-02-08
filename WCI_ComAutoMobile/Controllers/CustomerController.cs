@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Application.Commands.Customers;
-using Application.Handlers.Customers.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using Application.Handlers.Customers.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Model.Commands.Customers;
 using Model.ViewModels.Customers;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WCI_ComAutoMobile.Controllers
 {
@@ -39,10 +37,10 @@ namespace WCI_ComAutoMobile.Controllers
             await _customerHanlder.Handler(command);
         }
 
-        [HttpDelete]
-        public async Task Get(CustomerDeleteCommand command)
+        [HttpDelete("Delete/{customerId}")]
+        public async Task Delete(Guid customerId)
         {
-            await _customerHanlder.Handler(command);
+            await _customerHanlder.Handler(customerId);
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Repository.General
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
     {
         #region .:: Prorpiedades ::.        
         //public Settings _settings;
@@ -28,7 +28,7 @@ namespace Repository.General
         #endregion
 
         #region .:: Crud ::.
-        public async Task<TEntity> AddAsync(TEntity entity, string query)
+        protected async Task<TEntity> AddAsync(TEntity entity, string query)
         {
             entity = BeforAdd(entity);
             using var con = new SqlConnection(_db.connectionString);
@@ -49,7 +49,7 @@ namespace Repository.General
             return entity;
         }
 
-        public async Task DeleteAsync(TEntity entity, string query)
+        protected async Task DeleteAsync(TEntity entity, string query)
         {
             using var con = new SqlConnection(_db.connectionString);
             try
@@ -67,7 +67,7 @@ namespace Repository.General
             }
         }
 
-        public async Task<List<TEntity>> GetListAsync(TEntity entity, string query)
+        protected async Task<List<TEntity>> GetListAsync(TEntity entity, string query)
         {
             List<TEntity> entityList = new List<TEntity>();
 
@@ -89,7 +89,7 @@ namespace Repository.General
             return entityList;
         }
 
-        public async Task<int> GetListCountAsync(TEntity entity, string query)
+        protected async Task<int> GetListCountAsync(TEntity entity, string query)
         {
             int entityList = 0;
             using var con = new SqlConnection(_db.connectionString);
@@ -110,7 +110,7 @@ namespace Repository.General
             return entityList;
         }
 
-        public async Task<TEntity> UpdateAsync(TEntity entity, string query)
+        protected async Task<TEntity> UpdateAsync(TEntity entity, string query)
         {
             entity = BeforUpdate(entity);
             using var con = new SqlConnection(_db.connectionString);
@@ -138,7 +138,7 @@ namespace Repository.General
         #endregion
 
         #region .:: Methods Helpers ::.
-        public virtual TEntity BeforAdd(TEntity entity)
+        protected virtual TEntity BeforAdd(TEntity entity)
         {
             entity.Active = true;
             entity.CreateDate = DateTime.Now;
@@ -146,11 +146,11 @@ namespace Repository.General
             return entity;
         }
 
-        public virtual TEntity BeforUpdate(TEntity entity)
+        protected virtual TEntity BeforUpdate(TEntity entity)
         {
             entity.ModifieldDate = DateTime.Now;
             return entity;
-        }
+        }       
 
         #endregion
     }

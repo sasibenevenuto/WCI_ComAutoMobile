@@ -1,4 +1,5 @@
-﻿using Model.Enums.Customers;
+﻿using Model.Commands.Customers;
+using Model.Enums.Customers;
 using Model.Models.Companies;
 using Model.Models.General;
 using System;
@@ -52,5 +53,27 @@ namespace Model.Models.Customers
         //public List<Agenda> Agendas { get; set; }        
         public List<CustomerAddress> CustomersAddress { get; set; }
         #endregion
+
+        public Customer ParseAdd(CustomerAddCommand command)
+        {
+            return Parse(command);
+
+        }
+
+        public Customer ParseUpdate(CustomerUpdateCommand command)
+        {
+            var customer = Parse(command);
+            customer.CustomerId = command.CustomerId;
+
+            return customer;
+        }
+
+        public Customer Parse(CustomerCommand command)
+        {
+            return new Customer()
+            {
+                TradingName = command.TradingName
+            };
+        }
     }
 }

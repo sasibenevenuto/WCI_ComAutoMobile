@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.Commands.Customers
+namespace Model.Commands.Customers
 {
-    public class CustomerDeleteCommand
+    public class CustomerUpdateCommand : CustomerCommand
     {
         public Guid CustomerId { get; set; }
+        
     }
 }
