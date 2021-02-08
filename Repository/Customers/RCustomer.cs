@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Context;
+using Microsoft.Extensions.Options;
 using Model.Models.Customers;
 using Model.Models.General;
 using Repository.Customers.Interfaces;
@@ -8,9 +9,9 @@ namespace Repository.Customers
 {
     public  class RCustomer : Repository<Customer>, IRCustomer
     {
-        public RCustomer(IOptions<Settings> options)
+        public RCustomer(SolutionContext context) : base(context)
         {
-            _settings = options.Value;
+            
         }
     }
 }

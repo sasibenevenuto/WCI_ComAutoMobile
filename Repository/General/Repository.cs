@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using Context;
+using Dapper;
 using Model.Models.General;
 using Repository.General.Interfaces;
 using System;
@@ -12,13 +13,16 @@ namespace Repository.General
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
     {
         #region .:: Prorpiedades ::.        
-        public Settings _settings;
+        //public Settings _settings;
+
+        public SolutionContext _db;
 
         #endregion
 
         #region .:: Construtor ::.
-        public Repository()
+        public Repository(SolutionContext db)
         {
+            _db = db;
         }
 
         #endregion
@@ -27,7 +31,7 @@ namespace Repository.General
         public async Task<TEntity> AddAsync(TEntity entity, string query)
         {
             entity = BeforAdd(entity);
-            using var con = new SqlConnection(_settings.ConnectionString);
+            using var con = new SqlConnection(_db.connectionString);
             try
             {
                 con.Open();
@@ -47,7 +51,7 @@ namespace Repository.General
 
         public async Task DeleteAsync(TEntity entity, string query)
         {
-            using var con = new SqlConnection(_settings.ConnectionString);
+            using var con = new SqlConnection(_db.connectionString);
             try
             {
                 con.Open();
@@ -67,7 +71,7 @@ namespace Repository.General
         {
             List<TEntity> entityList = new List<TEntity>();
 
-            using var con = new SqlConnection(_settings.ConnectionString);
+            using var con = new SqlConnection(_db.connectionString);
             try
             {
                 con.Open();
@@ -88,7 +92,7 @@ namespace Repository.General
         public async Task<int> GetListCountAsync(TEntity entity, string query)
         {
             int entityList = 0;
-            using var con = new SqlConnection(_settings.ConnectionString);
+            using var con = new SqlConnection(_db.connectionString);
             try
             {
                 con.Open();
@@ -109,7 +113,7 @@ namespace Repository.General
         public async Task<TEntity> UpdateAsync(TEntity entity, string query)
         {
             entity = BeforUpdate(entity);
-            using var con = new SqlConnection(_settings.ConnectionString);
+            using var con = new SqlConnection(_db.connectionString);
             try
             {
                 con.Open();

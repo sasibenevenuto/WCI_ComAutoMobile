@@ -66,7 +66,7 @@ namespace Application.Handlers.Customers
         {
             try
             {
-                await _rCustomer.UpdateAsync(new Customer() { CustomerId = command.CustomerId, TradingName = command.TradingName, Idade = command.Idade }, $@"UPDATE [dbo].[Customer]
+                await _rCustomer.UpdateAsync(new Customer() { CustomerId = command.CustomerId, TradingName = command.TradingName}, $@"UPDATE [dbo].[Customer]
    SET 
        [TradingName] = @TradingName
       ,[Idade] = @Idade            

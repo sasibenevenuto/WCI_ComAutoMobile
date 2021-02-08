@@ -15,4 +15,3 @@ C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\DataBase\obj\Debug\n
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\DataBase\obj\Debug\netcoreapp3.1\DataBase.csproj.CoreCompileInputs.cache
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\DataBase\obj\Debug\netcoreapp3.1\DataBase.dll
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\DataBase\obj\Debug\netcoreapp3.1\DataBase.pdb
-C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\DataBase\obj\Debug\netcoreapp3.1\DataBase.csprojAssemblyReference.cache

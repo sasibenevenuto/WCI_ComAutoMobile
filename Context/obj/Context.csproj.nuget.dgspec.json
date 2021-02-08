@@ -10,17 +10,12 @@
         "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Context\\Context.csproj",
         "projectName": "Context",
         "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Context\\Context.csproj",
-        "packagesPath": "C:\\Users\\SAMUEL\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\sasi\\.nuget\\packages\\",
         "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Context\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\SAMUEL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\sasi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -31,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\Model.csproj": {
                 "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\Model.csproj"
@@ -46,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -87,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -97,17 +94,12 @@
         "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\Model.csproj",
         "projectName": "Model",
         "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\SAMUEL\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\sasi\\.nuget\\packages\\",
         "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Model\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\SAMUEL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\sasi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -118,6 +110,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -129,6 +122,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -154,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

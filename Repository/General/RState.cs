@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Context;
+using Microsoft.Extensions.Options;
 using Model.Models.General;
 using Repository.General.Interfaces;
 
@@ -6,9 +7,9 @@ namespace Repository.General
 {
     public class RState : Repository<State>, IRState
     {
-        public RState(IOptions<Settings> options)
+        public RState(SolutionContext context) : base(context)
         {
-            _settings = options.Value;
+
         }
     }
 }

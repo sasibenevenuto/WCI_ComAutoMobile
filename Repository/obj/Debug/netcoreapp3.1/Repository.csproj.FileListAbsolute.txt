@@ -22,3 +22,5 @@ C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Repository\obj\Debug
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CopyComplete
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.dll
 C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Repository\bin\Debug\netcoreapp3.1\Context.dll
+C:\ProjetoBaseWorkingCode\SolutionWCI_2020\WCIComAutoMobile\Repository\bin\Debug\netcoreapp3.1\Context.pdb

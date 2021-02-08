@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Model.Models.Companies;
 using Model.Models.Customers;
 using Model.Models.General;
@@ -10,10 +11,15 @@ namespace Context
 {
     public class SolutionContext : IdentityDbContext<User>, ISolutionContext
     {
-        public SolutionContext(DbContextOptions<SolutionContext> options)
+        public readonly string connectionString;
+        //public SolutionContext(IOptions<Settings> options)
+        //{
+        //    connectionString = options.Value.ConnectionString;
+        //}
+        public SolutionContext(DbContextOptions<SolutionContext> options, IOptions<Settings> settingsOptions)
           : base(options)
         {
-
+            connectionString = settingsOptions.Value.ConnectionString;
         }
 
         public DbSet<Account> Account { get; set; }

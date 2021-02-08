@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Context;
+using Microsoft.Extensions.Options;
 using Model.Models.Companies;
 using Model.Models.General;
 using Repository.Companies.Interfaces;
@@ -11,9 +12,9 @@ namespace Repository.Companies
 {
     public class RAccount : Repository<Account>, IRAccount
     {
-        public RAccount(IOptions<Settings> options)
+        public RAccount(SolutionContext context) : base(context)
         {
-            _settings = options.Value;
+            //_settings = options.Value;
         }
     }
 }

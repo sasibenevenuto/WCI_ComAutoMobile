@@ -1776,6 +1776,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Context": "1.0.0",
           "Dapper": "2.0.78",
           "Model": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
@@ -6333,9 +6334,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SAMUEL\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\sasi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -6343,17 +6342,12 @@
       "projectUniqueName": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\WCI_ComAutoMobile\\WCI_ComAutoMobile.csproj",
       "projectName": "WCI_ComAutoMobile",
       "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\WCI_ComAutoMobile\\WCI_ComAutoMobile.csproj",
-      "packagesPath": "C:\\Users\\SAMUEL\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\sasi\\.nuget\\packages\\",
       "outputPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\WCI_ComAutoMobile\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\SAMUEL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\sasi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6364,6 +6358,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Application\\Application.csproj": {
               "projectPath": "C:\\ProjetoBaseWorkingCode\\SolutionWCI_2020\\WCIComAutoMobile\\Application\\Application.csproj"
@@ -6385,6 +6380,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Cors": {
             "target": "Package",
@@ -6457,7 +6453,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
