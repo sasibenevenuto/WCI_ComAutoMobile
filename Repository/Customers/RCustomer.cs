@@ -20,7 +20,7 @@ namespace Repository.Customers
         public async Task AddCustomerAsync(Customer customer)
         {
             await AddAsync(customer, @"
-                    INSERT INTO [dbo].[Customer]
+                    INSERT INTO [dbo].[CUS_Customer]
                                ([CustomerId]
                                ,[TradingName]
                                ,[Idade]
@@ -42,18 +42,18 @@ namespace Repository.Customers
 
         public async Task DeleteCustomerAsync(Guid customerId)
         {
-            await DeleteAsync(new Customer() { CustomerId = customerId }, $@"DELETE FROM [dbo].[Customer] WHERE [CustomerId] = @CustomerId");
+            await DeleteAsync(new Customer() { CustomerId = customerId }, $@"DELETE FROM [dbo].[CUS_Customer] WHERE [CustomerId] = @CustomerId");
         }
 
         public async Task<List<CustomerViewModel>> GetListCustomerAsync()
         {
-            return (await GetListAsync(new Customer(), "SELECT * FROM State")).Select(x => (CustomerViewModel)x).ToList();
+            return (await GetListAsync(new Customer(), "SELECT * FROM CUS_Customer")).Select(x => (CustomerViewModel)x).ToList();
         }
 
         public async Task UpdateCustomerAsync(Customer customer)
         {
             await UpdateAsync(customer, $@"
-                UPDATE [dbo].[Customer]
+                UPDATE [dbo].[CUS_Customer]
                    SET 
                        [TradingName] = @TradingName
                       ,[Idade] = @Idade            
