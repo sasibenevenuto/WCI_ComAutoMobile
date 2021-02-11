@@ -150,6 +150,142 @@ namespace Context.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Model.Models.Common.City", b =>
+                {
+                    b.Property<int>("CityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ExternalCode")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("ModifieldDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("StateId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserIDCreate")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserIDLastUpdate")
+                        .HasColumnType("int");
+
+                    b.HasKey("CityId");
+
+                    b.HasIndex("StateId");
+
+                    b.ToTable("GEN_City");
+                });
+
+            modelBuilder.Entity("Model.Models.Common.PersonalInformation", b =>
+                {
+                    b.Property<int>("PersonalInformationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("AddressComplement")
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("AddressNumber")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int?>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IndividualResistration")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime>("ModifieldDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Neighborhood")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("PhoneNumbers")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int?>("UserIDCreate")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserIDLastUpdate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("PersonalInformationId");
+
+                    b.HasIndex("CityId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("GEN_PersonalInformation");
+                });
+
+            modelBuilder.Entity("Model.Models.Common.State", b =>
+                {
+                    b.Property<int>("StateId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ExternalCode")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("FederativeUnit")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime>("ModifieldDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("UserIDCreate")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserIDLastUpdate")
+                        .HasColumnType("int");
+
+                    b.HasKey("StateId");
+
+                    b.HasIndex("UserIDCreate");
+
+                    b.HasIndex("UserIDLastUpdate");
+
+                    b.ToTable("GEN_State");
+                });
+
             modelBuilder.Entity("Model.Models.Companies.Account", b =>
                 {
                     b.Property<Guid>("AccountId")
@@ -177,7 +313,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserIDLastUpdate");
 
-                    b.ToTable("Account");
+                    b.ToTable("COM_Account");
                 });
 
             modelBuilder.Entity("Model.Models.Companies.Company", b =>
@@ -262,7 +398,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserIDLastUpdate");
 
-                    b.ToTable("Company");
+                    b.ToTable("COM_Company");
                 });
 
             modelBuilder.Entity("Model.Models.Companies.CompanyConfigNFe", b =>
@@ -309,7 +445,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserIDLastUpdate");
 
-                    b.ToTable("CompanyConfigNFe");
+                    b.ToTable("COM_CompanyConfigNFe");
                 });
 
             modelBuilder.Entity("Model.Models.Companies.Employee", b =>
@@ -353,7 +489,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Employee");
+                    b.ToTable("COM_Employee");
                 });
 
             modelBuilder.Entity("Model.Models.Customers.Customer", b =>
@@ -409,7 +545,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserIDLastUpdate");
 
-                    b.ToTable("Customer");
+                    b.ToTable("CUS_Customer");
                 });
 
             modelBuilder.Entity("Model.Models.Customers.CustomerAddress", b =>
@@ -471,143 +607,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserIDLastUpdate");
 
-                    b.ToTable("CustomerAddress");
-                });
-
-            modelBuilder.Entity("Model.Models.General.City", b =>
-                {
-                    b.Property<int>("CityId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ExternalCode")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime>("ModifieldDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<int>("StateId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserIDCreate")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserIDLastUpdate")
-                        .HasColumnType("int");
-
-                    b.HasKey("CityId");
-
-                    b.HasIndex("StateId");
-
-                    b.ToTable("City");
-                });
-
-            modelBuilder.Entity("Model.Models.General.PersonalInformation", b =>
-                {
-                    b.Property<int>("PersonalInformationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("AddressComplement")
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("AddressNumber")
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<int?>("CityId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("IndividualResistration")
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<DateTime>("ModifieldDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Neighborhood")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("PhoneNumbers")
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("PostalCode")
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<int?>("UserIDCreate")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserIDLastUpdate")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("PersonalInformationId");
-
-                    b.HasIndex("CityId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Personal_Information");
-                });
-
-            modelBuilder.Entity("Model.Models.General.State", b =>
-                {
-                    b.Property<int>("StateId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ExternalCode")
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("FederativeUnit")
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<DateTime>("ModifieldDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<int>("UserIDCreate")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserIDLastUpdate")
-                        .HasColumnType("int");
-
-                    b.HasKey("StateId");
-
-                    b.HasIndex("UserIDCreate");
-
-                    b.HasIndex("UserIDLastUpdate");
-
-                    b.ToTable("State");
+                    b.ToTable("CUS_CustomerAddress");
                 });
 
             modelBuilder.Entity("Model.Models.Identity.Claim", b =>
@@ -843,15 +843,62 @@ namespace Context.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Model.Models.Companies.Account", b =>
+            modelBuilder.Entity("Model.Models.Common.City", b =>
                 {
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
+                    b.HasOne("Model.Models.Common.State", "State")
+                        .WithMany("Cities")
+                        .HasForeignKey("StateId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("State");
+                });
+
+            modelBuilder.Entity("Model.Models.Common.PersonalInformation", b =>
+                {
+                    b.HasOne("Model.Models.Common.City", "City")
+                        .WithMany()
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Model.Models.Identity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("City");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Model.Models.Common.State", b =>
+                {
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
+                        .WithMany()
+                        .HasForeignKey("UserIDLastUpdate")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("PersonalInformationCreate");
+
+                    b.Navigation("PersonalInformationUpdate");
+                });
+
+            modelBuilder.Entity("Model.Models.Companies.Account", b =>
+                {
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationCreate")
+                        .WithMany()
+                        .HasForeignKey("UserIDCreate")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -870,19 +917,19 @@ namespace Context.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.City", "City")
+                    b.HasOne("Model.Models.Common.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -905,13 +952,13 @@ namespace Context.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -932,13 +979,13 @@ namespace Context.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -966,13 +1013,13 @@ namespace Context.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -987,7 +1034,7 @@ namespace Context.Migrations
 
             modelBuilder.Entity("Model.Models.Customers.CustomerAddress", b =>
                 {
-                    b.HasOne("Model.Models.General.City", "City")
+                    b.HasOne("Model.Models.Common.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -999,13 +1046,13 @@ namespace Context.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -1020,62 +1067,15 @@ namespace Context.Migrations
                     b.Navigation("PersonalInformationUpdate");
                 });
 
-            modelBuilder.Entity("Model.Models.General.City", b =>
-                {
-                    b.HasOne("Model.Models.General.State", "State")
-                        .WithMany("Cities")
-                        .HasForeignKey("StateId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("State");
-                });
-
-            modelBuilder.Entity("Model.Models.General.PersonalInformation", b =>
-                {
-                    b.HasOne("Model.Models.General.City", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("Model.Models.Identity.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("City");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Model.Models.General.State", b =>
-                {
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
-                        .WithMany()
-                        .HasForeignKey("UserIDCreate")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
-                        .WithMany()
-                        .HasForeignKey("UserIDLastUpdate")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("PersonalInformationCreate");
-
-                    b.Navigation("PersonalInformationUpdate");
-                });
-
             modelBuilder.Entity("Model.Models.Identity.Claim", b =>
                 {
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUser")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -1088,13 +1088,13 @@ namespace Context.Migrations
 
             modelBuilder.Entity("Model.Models.Identity.Profile", b =>
                 {
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationCreate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationCreate")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -1123,13 +1123,13 @@ namespace Context.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUser")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUser")
                         .WithMany()
                         .HasForeignKey("UserIDCreate")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Model.Models.General.PersonalInformation", "PersonalInformationUpdate")
+                    b.HasOne("Model.Models.Common.PersonalInformation", "PersonalInformationUpdate")
                         .WithMany()
                         .HasForeignKey("UserIDLastUpdate")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -1149,6 +1149,11 @@ namespace Context.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Model.Models.Common.State", b =>
+                {
+                    b.Navigation("Cities");
+                });
+
             modelBuilder.Entity("Model.Models.Companies.Account", b =>
                 {
                     b.Navigation("Companies");
@@ -1164,11 +1169,6 @@ namespace Context.Migrations
             modelBuilder.Entity("Model.Models.Customers.Customer", b =>
                 {
                     b.Navigation("CustomersAddress");
-                });
-
-            modelBuilder.Entity("Model.Models.General.State", b =>
-                {
-                    b.Navigation("Cities");
                 });
 #pragma warning restore 612, 618
         }

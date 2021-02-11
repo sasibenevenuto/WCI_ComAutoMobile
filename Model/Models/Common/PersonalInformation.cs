@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Model.Models.Common
 {
-    [Table("Personal_Information")]
+    [Table("GEN_PersonalInformation")]
     public class PersonalInformation : BaseModel
     {
         [Key]

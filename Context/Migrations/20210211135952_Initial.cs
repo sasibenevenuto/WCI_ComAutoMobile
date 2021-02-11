@@ -43,39 +43,6 @@ namespace Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Company",
-                columns: table => new
-                {
-                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TradingName = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    FantasyName = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    CNPJ = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    StateRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    CNAE = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    MunicipalityRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    StateRegistrationReplaceTributary = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    UrlLogo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CellPhone = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    PhoneNumbers = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    PostalCode = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(250)", nullable: true),
-                    AddressNumber = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    AddressComplement = table.Column<string>(type: "nvarchar(250)", nullable: true),
-                    Neighborhood = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    CityId = table.Column<int>(type: "int", nullable: false),
-                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
-                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
-                    Active = table.Column<bool>(type: "bit", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Company", x => x.CompanyId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
@@ -137,7 +104,7 @@ namespace Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Employee",
+                name: "COM_Employee",
                 columns: table => new
                 {
                     EmployeeId = table.Column<long>(type: "bigint", nullable: false)
@@ -153,17 +120,11 @@ namespace Context.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employee", x => x.EmployeeId);
-                    table.ForeignKey(
-                        name: "FK_Employee_Company_CompanyId",
-                        column: x => x.CompanyId,
-                        principalTable: "Company",
-                        principalColumn: "CompanyId",
-                        onDelete: ReferentialAction.Restrict);
+                    table.PrimaryKey("PK_COM_Employee", x => x.EmployeeId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Personal_Information",
+                name: "GEN_PersonalInformation",
                 columns: table => new
                 {
                     PersonalInformationId = table.Column<int>(type: "int", nullable: false)
@@ -185,35 +146,7 @@ namespace Context.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Personal_Information", x => x.PersonalInformationId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Account",
-                columns: table => new
-                {
-                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
-                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
-                    Active = table.Column<bool>(type: "bit", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Account", x => x.AccountId);
-                    table.ForeignKey(
-                        name: "FK_Account_Personal_Information_UserIDCreate",
-                        column: x => x.UserIDCreate,
-                        principalTable: "Personal_Information",
-                        principalColumn: "PersonalInformationId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Account_Personal_Information_UserIDLastUpdate",
-                        column: x => x.UserIDLastUpdate,
-                        principalTable: "Personal_Information",
-                        principalColumn: "PersonalInformationId",
-                        onDelete: ReferentialAction.Restrict);
+                    table.PrimaryKey("PK_GEN_PersonalInformation", x => x.PersonalInformationId);
                 });
 
             migrationBuilder.CreateTable(
@@ -234,29 +167,56 @@ namespace Context.Migrations
                 {
                     table.PrimaryKey("PK_Claim", x => x.ClaimId);
                     table.ForeignKey(
-                        name: "FK_Claim_Personal_Information_UserIDCreate",
+                        name: "FK_Claim_GEN_PersonalInformation_UserIDCreate",
                         column: x => x.UserIDCreate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Claim_Personal_Information_UserIDLastUpdate",
+                        name: "FK_Claim_GEN_PersonalInformation_UserIDLastUpdate",
                         column: x => x.UserIDLastUpdate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CompanyConfigNFe",
+                name: "COM_Account",
                 columns: table => new
                 {
-                    CompanyConfigNFeId = table.Column<int>(type: "int", nullable: false)
+                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
+                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_COM_Account", x => x.AccountId);
+                    table.ForeignKey(
+                        name: "FK_COM_Account_GEN_PersonalInformation_UserIDCreate",
+                        column: x => x.UserIDCreate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_COM_Account_GEN_PersonalInformation_UserIDLastUpdate",
+                        column: x => x.UserIDLastUpdate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GEN_State",
+                columns: table => new
+                {
+                    StateId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CurrentNumberNfe = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
-                    VersionNfe = table.Column<string>(type: "nvarchar(200)", nullable: false),
-                    EnvironmentNFE = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    FederativeUnit = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    ExternalCode = table.Column<string>(type: "nvarchar(20)", nullable: true),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
@@ -265,65 +225,17 @@ namespace Context.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CompanyConfigNFe", x => x.CompanyConfigNFeId);
+                    table.PrimaryKey("PK_GEN_State", x => x.StateId);
                     table.ForeignKey(
-                        name: "FK_CompanyConfigNFe_Company_CompanyId",
-                        column: x => x.CompanyId,
-                        principalTable: "Company",
-                        principalColumn: "CompanyId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_CompanyConfigNFe_Personal_Information_UserIDCreate",
+                        name: "FK_GEN_State_GEN_PersonalInformation_UserIDCreate",
                         column: x => x.UserIDCreate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CompanyConfigNFe_Personal_Information_UserIDLastUpdate",
+                        name: "FK_GEN_State_GEN_PersonalInformation_UserIDLastUpdate",
                         column: x => x.UserIDLastUpdate,
-                        principalTable: "Personal_Information",
-                        principalColumn: "PersonalInformationId",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Customer",
-                columns: table => new
-                {
-                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CompnayId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TradingName = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    FantasyName = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    TypeCustomer = table.Column<int>(type: "int", nullable: false),
-                    CpfCnpj = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    StateRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    MunicipalityRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    Suframa = table.Column<string>(type: "nvarchar(100)", nullable: true),
-                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
-                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
-                    Active = table.Column<bool>(type: "bit", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customer", x => x.CustomerId);
-                    table.ForeignKey(
-                        name: "FK_Customer_Company_CompnayId",
-                        column: x => x.CompnayId,
-                        principalTable: "Company",
-                        principalColumn: "CompanyId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Customer_Personal_Information_UserIDCreate",
-                        column: x => x.UserIDCreate,
-                        principalTable: "Personal_Information",
-                        principalColumn: "PersonalInformationId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Customer_Personal_Information_UserIDLastUpdate",
-                        column: x => x.UserIDLastUpdate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -345,28 +257,28 @@ namespace Context.Migrations
                 {
                     table.PrimaryKey("PK_Profile", x => x.ProfileId);
                     table.ForeignKey(
-                        name: "FK_Profile_Personal_Information_UserIDCreate",
+                        name: "FK_Profile_GEN_PersonalInformation_UserIDCreate",
                         column: x => x.UserIDCreate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Profile_Personal_Information_UserIDLastUpdate",
+                        name: "FK_Profile_GEN_PersonalInformation_UserIDLastUpdate",
                         column: x => x.UserIDLastUpdate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "State",
+                name: "GEN_City",
                 columns: table => new
                 {
-                    StateId = table.Column<int>(type: "int", nullable: false)
+                    CityId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    FederativeUnit = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    ExternalCode = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    ExternalCode = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    StateId = table.Column<int>(type: "int", nullable: false),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
@@ -375,18 +287,12 @@ namespace Context.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_State", x => x.StateId);
+                    table.PrimaryKey("PK_GEN_City", x => x.CityId);
                     table.ForeignKey(
-                        name: "FK_State_Personal_Information_UserIDCreate",
-                        column: x => x.UserIDCreate,
-                        principalTable: "Personal_Information",
-                        principalColumn: "PersonalInformationId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_State_Personal_Information_UserIDLastUpdate",
-                        column: x => x.UserIDLastUpdate,
-                        principalTable: "Personal_Information",
-                        principalColumn: "PersonalInformationId",
+                        name: "FK_GEN_City_GEN_State_StateId",
+                        column: x => x.StateId,
+                        principalTable: "GEN_State",
+                        principalColumn: "StateId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -423,14 +329,27 @@ namespace Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "City",
+                name: "COM_Company",
                 columns: table => new
                 {
-                    CityId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    ExternalCode = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    StateId = table.Column<int>(type: "int", nullable: false),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TradingName = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    FantasyName = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    CNPJ = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    StateRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    CNAE = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    MunicipalityRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    StateRegistrationReplaceTributary = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    UrlLogo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CellPhone = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    PhoneNumbers = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    PostalCode = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(250)", nullable: true),
+                    AddressNumber = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    AddressComplement = table.Column<string>(type: "nvarchar(250)", nullable: true),
+                    Neighborhood = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    CityId = table.Column<int>(type: "int", nullable: false),
                     UserIDCreate = table.Column<int>(type: "int", nullable: false),
                     UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
@@ -439,12 +358,30 @@ namespace Context.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_City", x => x.CityId);
+                    table.PrimaryKey("PK_COM_Company", x => x.CompanyId);
                     table.ForeignKey(
-                        name: "FK_City_State_StateId",
-                        column: x => x.StateId,
-                        principalTable: "State",
-                        principalColumn: "StateId",
+                        name: "FK_COM_Company_COM_Account_AccountId",
+                        column: x => x.AccountId,
+                        principalTable: "COM_Account",
+                        principalColumn: "AccountId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_COM_Company_GEN_City_CityId",
+                        column: x => x.CityId,
+                        principalTable: "GEN_City",
+                        principalColumn: "CityId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_COM_Company_GEN_PersonalInformation_UserIDCreate",
+                        column: x => x.UserIDCreate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_COM_Company_GEN_PersonalInformation_UserIDLastUpdate",
+                        column: x => x.UserIDLastUpdate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -478,21 +415,102 @@ namespace Context.Migrations
                         principalColumn: "ClaimId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Users_x_Claims_Personal_Information_UserIDCreate",
+                        name: "FK_Users_x_Claims_GEN_PersonalInformation_UserIDCreate",
                         column: x => x.UserIDCreate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Users_x_Claims_Personal_Information_UserIDLastUpdate",
+                        name: "FK_Users_x_Claims_GEN_PersonalInformation_UserIDLastUpdate",
                         column: x => x.UserIDLastUpdate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CustomerAddress",
+                name: "COM_CompanyConfigNFe",
+                columns: table => new
+                {
+                    CompanyConfigNFeId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CurrentNumberNfe = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
+                    VersionNfe = table.Column<string>(type: "nvarchar(200)", nullable: false),
+                    EnvironmentNFE = table.Column<int>(type: "int", nullable: false),
+                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
+                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_COM_CompanyConfigNFe", x => x.CompanyConfigNFeId);
+                    table.ForeignKey(
+                        name: "FK_COM_CompanyConfigNFe_COM_Company_CompanyId",
+                        column: x => x.CompanyId,
+                        principalTable: "COM_Company",
+                        principalColumn: "CompanyId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_COM_CompanyConfigNFe_GEN_PersonalInformation_UserIDCreate",
+                        column: x => x.UserIDCreate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_COM_CompanyConfigNFe_GEN_PersonalInformation_UserIDLastUpdate",
+                        column: x => x.UserIDLastUpdate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CUS_Customer",
+                columns: table => new
+                {
+                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CompnayId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TradingName = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    FantasyName = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    TypeCustomer = table.Column<int>(type: "int", nullable: false),
+                    CpfCnpj = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    StateRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    MunicipalityRegistration = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    Suframa = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
+                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CUS_Customer", x => x.CustomerId);
+                    table.ForeignKey(
+                        name: "FK_CUS_Customer_COM_Company_CompnayId",
+                        column: x => x.CompnayId,
+                        principalTable: "COM_Company",
+                        principalColumn: "CompanyId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CUS_Customer_GEN_PersonalInformation_UserIDCreate",
+                        column: x => x.UserIDCreate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CUS_Customer_GEN_PersonalInformation_UserIDLastUpdate",
+                        column: x => x.UserIDLastUpdate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CUS_CustomerAddress",
                 columns: table => new
                 {
                     CustomerAddressId = table.Column<long>(type: "bigint", nullable: false)
@@ -514,42 +532,32 @@ namespace Context.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CustomerAddress", x => x.CustomerAddressId);
+                    table.PrimaryKey("PK_CUS_CustomerAddress", x => x.CustomerAddressId);
                     table.ForeignKey(
-                        name: "FK_CustomerAddress_City_CityId",
-                        column: x => x.CityId,
-                        principalTable: "City",
-                        principalColumn: "CityId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_CustomerAddress_Customer_CustomerId",
+                        name: "FK_CUS_CustomerAddress_CUS_Customer_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "Customer",
+                        principalTable: "CUS_Customer",
                         principalColumn: "CustomerId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CustomerAddress_Personal_Information_UserIDCreate",
+                        name: "FK_CUS_CustomerAddress_GEN_City_CityId",
+                        column: x => x.CityId,
+                        principalTable: "GEN_City",
+                        principalColumn: "CityId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CUS_CustomerAddress_GEN_PersonalInformation_UserIDCreate",
                         column: x => x.UserIDCreate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CustomerAddress_Personal_Information_UserIDLastUpdate",
+                        name: "FK_CUS_CustomerAddress_GEN_PersonalInformation_UserIDLastUpdate",
                         column: x => x.UserIDLastUpdate,
-                        principalTable: "Personal_Information",
+                        principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Account_UserIDCreate",
-                table: "Account",
-                column: "UserIDCreate");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Account_UserIDLastUpdate",
-                table: "Account",
-                column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -596,11 +604,6 @@ namespace Context.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_City_StateId",
-                table: "City",
-                column: "StateId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Claim_UserIDCreate",
                 table: "Claim",
                 column: "UserIDCreate");
@@ -611,105 +614,130 @@ namespace Context.Migrations
                 column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Company_AccountId",
-                table: "Company",
-                column: "AccountId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Company_CityId",
-                table: "Company",
-                column: "CityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Company_UserIDCreate",
-                table: "Company",
+                name: "IX_COM_Account_UserIDCreate",
+                table: "COM_Account",
                 column: "UserIDCreate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Company_UserIDLastUpdate",
-                table: "Company",
+                name: "IX_COM_Account_UserIDLastUpdate",
+                table: "COM_Account",
                 column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CompanyConfigNFe_CompanyId",
-                table: "CompanyConfigNFe",
+                name: "IX_COM_Company_AccountId",
+                table: "COM_Company",
+                column: "AccountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_COM_Company_CityId",
+                table: "COM_Company",
+                column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_COM_Company_UserIDCreate",
+                table: "COM_Company",
+                column: "UserIDCreate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_COM_Company_UserIDLastUpdate",
+                table: "COM_Company",
+                column: "UserIDLastUpdate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_COM_CompanyConfigNFe_CompanyId",
+                table: "COM_CompanyConfigNFe",
                 column: "CompanyId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_CompanyConfigNFe_UserIDCreate",
-                table: "CompanyConfigNFe",
+                name: "IX_COM_CompanyConfigNFe_UserIDCreate",
+                table: "COM_CompanyConfigNFe",
                 column: "UserIDCreate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CompanyConfigNFe_UserIDLastUpdate",
-                table: "CompanyConfigNFe",
+                name: "IX_COM_CompanyConfigNFe_UserIDLastUpdate",
+                table: "COM_CompanyConfigNFe",
                 column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Customer_CompnayId",
-                table: "Customer",
-                column: "CompnayId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Customer_UserIDCreate",
-                table: "Customer",
-                column: "UserIDCreate");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Customer_UserIDLastUpdate",
-                table: "Customer",
-                column: "UserIDLastUpdate");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CustomerAddress_CityId",
-                table: "CustomerAddress",
-                column: "CityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CustomerAddress_CustomerId",
-                table: "CustomerAddress",
-                column: "CustomerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CustomerAddress_UserIDCreate",
-                table: "CustomerAddress",
-                column: "UserIDCreate");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CustomerAddress_UserIDLastUpdate",
-                table: "CustomerAddress",
-                column: "UserIDLastUpdate");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Employee_CompanyId",
-                table: "Employee",
+                name: "IX_COM_Employee_CompanyId",
+                table: "COM_Employee",
                 column: "CompanyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employee_UserId",
-                table: "Employee",
+                name: "IX_COM_Employee_UserId",
+                table: "COM_Employee",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employee_UserIDCreate",
-                table: "Employee",
+                name: "IX_COM_Employee_UserIDCreate",
+                table: "COM_Employee",
                 column: "UserIDCreate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employee_UserIDLastUpdate",
-                table: "Employee",
+                name: "IX_COM_Employee_UserIDLastUpdate",
+                table: "COM_Employee",
                 column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Personal_Information_CityId",
-                table: "Personal_Information",
+                name: "IX_CUS_Customer_CompnayId",
+                table: "CUS_Customer",
+                column: "CompnayId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CUS_Customer_UserIDCreate",
+                table: "CUS_Customer",
+                column: "UserIDCreate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CUS_Customer_UserIDLastUpdate",
+                table: "CUS_Customer",
+                column: "UserIDLastUpdate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CUS_CustomerAddress_CityId",
+                table: "CUS_CustomerAddress",
                 column: "CityId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Personal_Information_UserId",
-                table: "Personal_Information",
+                name: "IX_CUS_CustomerAddress_CustomerId",
+                table: "CUS_CustomerAddress",
+                column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CUS_CustomerAddress_UserIDCreate",
+                table: "CUS_CustomerAddress",
+                column: "UserIDCreate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CUS_CustomerAddress_UserIDLastUpdate",
+                table: "CUS_CustomerAddress",
+                column: "UserIDLastUpdate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GEN_City_StateId",
+                table: "GEN_City",
+                column: "StateId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GEN_PersonalInformation_CityId",
+                table: "GEN_PersonalInformation",
+                column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GEN_PersonalInformation_UserId",
+                table: "GEN_PersonalInformation",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GEN_State_UserIDCreate",
+                table: "GEN_State",
+                column: "UserIDCreate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GEN_State_UserIDLastUpdate",
+                table: "GEN_State",
+                column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Profile_UserIDCreate",
@@ -719,16 +747,6 @@ namespace Context.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Profile_UserIDLastUpdate",
                 table: "Profile",
-                column: "UserIDLastUpdate");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_State_UserIDCreate",
-                table: "State",
-                column: "UserIDCreate");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_State_UserIDLastUpdate",
-                table: "State",
                 column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
@@ -750,38 +768,6 @@ namespace Context.Migrations
                 name: "IX_Users_x_Claims_UserIDLastUpdate",
                 table: "Users_x_Claims",
                 column: "UserIDLastUpdate");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Company_Account_AccountId",
-                table: "Company",
-                column: "AccountId",
-                principalTable: "Account",
-                principalColumn: "AccountId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Company_City_CityId",
-                table: "Company",
-                column: "CityId",
-                principalTable: "City",
-                principalColumn: "CityId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Company_Personal_Information_UserIDCreate",
-                table: "Company",
-                column: "UserIDCreate",
-                principalTable: "Personal_Information",
-                principalColumn: "PersonalInformationId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Company_Personal_Information_UserIDLastUpdate",
-                table: "Company",
-                column: "UserIDLastUpdate",
-                principalTable: "Personal_Information",
-                principalColumn: "PersonalInformationId",
-                onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_AspNetUserRoles_AspNetUsers_UserId",
@@ -816,42 +802,50 @@ namespace Context.Migrations
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Employee_AspNetUsers_UserId",
-                table: "Employee",
+                name: "FK_COM_Employee_AspNetUsers_UserId",
+                table: "COM_Employee",
                 column: "UserId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Employee_Personal_Information_UserIDCreate",
-                table: "Employee",
+                name: "FK_COM_Employee_COM_Company_CompanyId",
+                table: "COM_Employee",
+                column: "CompanyId",
+                principalTable: "COM_Company",
+                principalColumn: "CompanyId",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_COM_Employee_GEN_PersonalInformation_UserIDCreate",
+                table: "COM_Employee",
                 column: "UserIDCreate",
-                principalTable: "Personal_Information",
+                principalTable: "GEN_PersonalInformation",
                 principalColumn: "PersonalInformationId",
                 onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Employee_Personal_Information_UserIDLastUpdate",
-                table: "Employee",
+                name: "FK_COM_Employee_GEN_PersonalInformation_UserIDLastUpdate",
+                table: "COM_Employee",
                 column: "UserIDLastUpdate",
-                principalTable: "Personal_Information",
+                principalTable: "GEN_PersonalInformation",
                 principalColumn: "PersonalInformationId",
                 onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Personal_Information_AspNetUsers_UserId",
-                table: "Personal_Information",
+                name: "FK_GEN_PersonalInformation_AspNetUsers_UserId",
+                table: "GEN_PersonalInformation",
                 column: "UserId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Personal_Information_City_CityId",
-                table: "Personal_Information",
+                name: "FK_GEN_PersonalInformation_GEN_City_CityId",
+                table: "GEN_PersonalInformation",
                 column: "CityId",
-                principalTable: "City",
+                principalTable: "GEN_City",
                 principalColumn: "CityId",
                 onDelete: ReferentialAction.Restrict);
         }
@@ -859,20 +853,16 @@ namespace Context.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Profile_Personal_Information_UserIDCreate",
-                table: "Profile");
+                name: "FK_GEN_PersonalInformation_AspNetUsers_UserId",
+                table: "GEN_PersonalInformation");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_Profile_Personal_Information_UserIDLastUpdate",
-                table: "Profile");
+                name: "FK_GEN_State_GEN_PersonalInformation_UserIDCreate",
+                table: "GEN_State");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_State_Personal_Information_UserIDCreate",
-                table: "State");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_State_Personal_Information_UserIDLastUpdate",
-                table: "State");
+                name: "FK_GEN_State_GEN_PersonalInformation_UserIDLastUpdate",
+                table: "GEN_State");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -890,13 +880,13 @@ namespace Context.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "CompanyConfigNFe");
+                name: "COM_CompanyConfigNFe");
 
             migrationBuilder.DropTable(
-                name: "CustomerAddress");
+                name: "COM_Employee");
 
             migrationBuilder.DropTable(
-                name: "Employee");
+                name: "CUS_CustomerAddress");
 
             migrationBuilder.DropTable(
                 name: "Users_x_Claims");
@@ -905,31 +895,31 @@ namespace Context.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Customer");
+                name: "CUS_Customer");
 
             migrationBuilder.DropTable(
                 name: "Claim");
 
             migrationBuilder.DropTable(
-                name: "Company");
+                name: "COM_Company");
 
             migrationBuilder.DropTable(
-                name: "Account");
-
-            migrationBuilder.DropTable(
-                name: "Personal_Information");
+                name: "COM_Account");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "City");
-
-            migrationBuilder.DropTable(
                 name: "Profile");
 
             migrationBuilder.DropTable(
-                name: "State");
+                name: "GEN_PersonalInformation");
+
+            migrationBuilder.DropTable(
+                name: "GEN_City");
+
+            migrationBuilder.DropTable(
+                name: "GEN_State");
         }
     }
 }

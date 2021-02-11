@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Models.Common
 {
-    [Table("State")]
+    [Table("GEN_State")]
     public class State : BaseModel
     {
         [Key]

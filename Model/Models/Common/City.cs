@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Models.Common
 {
-    [Table("City")]
+    [Table("GEN_City")]
     public class City : BaseModel
     {
         [Key]
