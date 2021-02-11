@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Models.Identity
 {
-    [Table("Claim")]
+    [Table("IDE_Claim")]
     public class Claim : BaseModel
     {
         [Key]

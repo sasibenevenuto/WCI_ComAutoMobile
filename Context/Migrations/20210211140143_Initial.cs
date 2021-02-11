@@ -150,37 +150,6 @@ namespace Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Claim",
-                columns: table => new
-                {
-                    ClaimId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Description = table.Column<string>(type: "nvarchar(200)", nullable: true),
-                    TypeFunctionClaim = table.Column<int>(type: "int", nullable: false),
-                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
-                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
-                    Active = table.Column<bool>(type: "bit", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Claim", x => x.ClaimId);
-                    table.ForeignKey(
-                        name: "FK_Claim_GEN_PersonalInformation_UserIDCreate",
-                        column: x => x.UserIDCreate,
-                        principalTable: "GEN_PersonalInformation",
-                        principalColumn: "PersonalInformationId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Claim_GEN_PersonalInformation_UserIDLastUpdate",
-                        column: x => x.UserIDLastUpdate,
-                        principalTable: "GEN_PersonalInformation",
-                        principalColumn: "PersonalInformationId",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "COM_Account",
                 columns: table => new
                 {
@@ -241,7 +210,38 @@ namespace Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Profile",
+                name: "IDE_Claim",
+                columns: table => new
+                {
+                    ClaimId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(200)", nullable: true),
+                    TypeFunctionClaim = table.Column<int>(type: "int", nullable: false),
+                    UserIDCreate = table.Column<int>(type: "int", nullable: false),
+                    UserIDLastUpdate = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifieldDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_IDE_Claim", x => x.ClaimId);
+                    table.ForeignKey(
+                        name: "FK_IDE_Claim_GEN_PersonalInformation_UserIDCreate",
+                        column: x => x.UserIDCreate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_IDE_Claim_GEN_PersonalInformation_UserIDLastUpdate",
+                        column: x => x.UserIDLastUpdate,
+                        principalTable: "GEN_PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "IDE_Profile",
                 columns: table => new
                 {
                     ProfileId = table.Column<int>(type: "int", nullable: false)
@@ -255,15 +255,15 @@ namespace Context.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Profile", x => x.ProfileId);
+                    table.PrimaryKey("PK_IDE_Profile", x => x.ProfileId);
                     table.ForeignKey(
-                        name: "FK_Profile_GEN_PersonalInformation_UserIDCreate",
+                        name: "FK_IDE_Profile_GEN_PersonalInformation_UserIDCreate",
                         column: x => x.UserIDCreate,
                         principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Profile_GEN_PersonalInformation_UserIDLastUpdate",
+                        name: "FK_IDE_Profile_GEN_PersonalInformation_UserIDLastUpdate",
                         column: x => x.UserIDLastUpdate,
                         principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
@@ -321,9 +321,9 @@ namespace Context.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUsers_Profile_ProfileId",
+                        name: "FK_AspNetUsers_IDE_Profile_ProfileId",
                         column: x => x.ProfileId,
-                        principalTable: "Profile",
+                        principalTable: "IDE_Profile",
                         principalColumn: "ProfileId",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -386,7 +386,7 @@ namespace Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users_x_Claims",
+                name: "IDE_Users_x_Claims",
                 columns: table => new
                 {
                     Users_x_ClaimsId = table.Column<int>(type: "int", nullable: false)
@@ -401,30 +401,30 @@ namespace Context.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users_x_Claims", x => x.Users_x_ClaimsId);
+                    table.PrimaryKey("PK_IDE_Users_x_Claims", x => x.Users_x_ClaimsId);
                     table.ForeignKey(
-                        name: "FK_Users_x_Claims_AspNetUsers_UserId",
+                        name: "FK_IDE_Users_x_Claims_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Users_x_Claims_Claim_ClaimId",
-                        column: x => x.ClaimId,
-                        principalTable: "Claim",
-                        principalColumn: "ClaimId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Users_x_Claims_GEN_PersonalInformation_UserIDCreate",
+                        name: "FK_IDE_Users_x_Claims_GEN_PersonalInformation_UserIDCreate",
                         column: x => x.UserIDCreate,
                         principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Users_x_Claims_GEN_PersonalInformation_UserIDLastUpdate",
+                        name: "FK_IDE_Users_x_Claims_GEN_PersonalInformation_UserIDLastUpdate",
                         column: x => x.UserIDLastUpdate,
                         principalTable: "GEN_PersonalInformation",
                         principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_IDE_Users_x_Claims_IDE_Claim_ClaimId",
+                        column: x => x.ClaimId,
+                        principalTable: "IDE_Claim",
+                        principalColumn: "ClaimId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -604,16 +604,6 @@ namespace Context.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Claim_UserIDCreate",
-                table: "Claim",
-                column: "UserIDCreate");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Claim_UserIDLastUpdate",
-                table: "Claim",
-                column: "UserIDLastUpdate");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_COM_Account_UserIDCreate",
                 table: "COM_Account",
                 column: "UserIDCreate");
@@ -740,33 +730,43 @@ namespace Context.Migrations
                 column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Profile_UserIDCreate",
-                table: "Profile",
+                name: "IX_IDE_Claim_UserIDCreate",
+                table: "IDE_Claim",
                 column: "UserIDCreate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Profile_UserIDLastUpdate",
-                table: "Profile",
+                name: "IX_IDE_Claim_UserIDLastUpdate",
+                table: "IDE_Claim",
                 column: "UserIDLastUpdate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_x_Claims_ClaimId",
-                table: "Users_x_Claims",
-                column: "ClaimId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Users_x_Claims_UserId",
-                table: "Users_x_Claims",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Users_x_Claims_UserIDCreate",
-                table: "Users_x_Claims",
+                name: "IX_IDE_Profile_UserIDCreate",
+                table: "IDE_Profile",
                 column: "UserIDCreate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_x_Claims_UserIDLastUpdate",
-                table: "Users_x_Claims",
+                name: "IX_IDE_Profile_UserIDLastUpdate",
+                table: "IDE_Profile",
+                column: "UserIDLastUpdate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_IDE_Users_x_Claims_ClaimId",
+                table: "IDE_Users_x_Claims",
+                column: "ClaimId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_IDE_Users_x_Claims_UserId",
+                table: "IDE_Users_x_Claims",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_IDE_Users_x_Claims_UserIDCreate",
+                table: "IDE_Users_x_Claims",
+                column: "UserIDCreate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_IDE_Users_x_Claims_UserIDLastUpdate",
+                table: "IDE_Users_x_Claims",
                 column: "UserIDLastUpdate");
 
             migrationBuilder.AddForeignKey(
@@ -889,7 +889,7 @@ namespace Context.Migrations
                 name: "CUS_CustomerAddress");
 
             migrationBuilder.DropTable(
-                name: "Users_x_Claims");
+                name: "IDE_Users_x_Claims");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -898,7 +898,7 @@ namespace Context.Migrations
                 name: "CUS_Customer");
 
             migrationBuilder.DropTable(
-                name: "Claim");
+                name: "IDE_Claim");
 
             migrationBuilder.DropTable(
                 name: "COM_Company");
@@ -910,7 +910,7 @@ namespace Context.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Profile");
+                name: "IDE_Profile");
 
             migrationBuilder.DropTable(
                 name: "GEN_PersonalInformation");

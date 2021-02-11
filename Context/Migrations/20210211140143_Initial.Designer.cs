@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Context.Migrations
 {
     [DbContext(typeof(SolutionContext))]
-    [Migration("20210211135952_Initial")]
+    [Migration("20210211140143_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -646,7 +646,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserIDLastUpdate");
 
-                    b.ToTable("Claim");
+                    b.ToTable("IDE_Claim");
                 });
 
             modelBuilder.Entity("Model.Models.Identity.Profile", b =>
@@ -680,7 +680,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserIDLastUpdate");
 
-                    b.ToTable("Profile");
+                    b.ToTable("IDE_Profile");
                 });
 
             modelBuilder.Entity("Model.Models.Identity.User", b =>
@@ -791,7 +791,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Users_x_Claims");
+                    b.ToTable("IDE_Users_x_Claims");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

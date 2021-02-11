@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Models.Identity
 {
-    [Table("AspNetUsers")]
+    [Table("IDE_AspNetUsers")]
     public class User : IdentityUser
     {        
         public override string Id { get; set; }

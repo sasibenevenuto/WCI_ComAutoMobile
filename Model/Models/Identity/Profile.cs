@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Models.Identity
 {
-    [Table("Profile")]
+    [Table("IDE_Profile")]
     public class Profile : BaseModel
     {
         [Key]

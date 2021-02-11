@@ -644,7 +644,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserIDLastUpdate");
 
-                    b.ToTable("Claim");
+                    b.ToTable("IDE_Claim");
                 });
 
             modelBuilder.Entity("Model.Models.Identity.Profile", b =>
@@ -678,7 +678,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserIDLastUpdate");
 
-                    b.ToTable("Profile");
+                    b.ToTable("IDE_Profile");
                 });
 
             modelBuilder.Entity("Model.Models.Identity.User", b =>
@@ -789,7 +789,7 @@ namespace Context.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Users_x_Claims");
+                    b.ToTable("IDE_Users_x_Claims");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
