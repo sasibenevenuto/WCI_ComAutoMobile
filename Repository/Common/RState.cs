@@ -1,13 +1,12 @@
 ﻿using Context;
-using Microsoft.Extensions.Options;
-using Model.Models.General;
-using Model.ViewModels.General;
-using Repository.General.Interfaces;
+using Model.Models.Common;
+using Model.ViewModels.Common;
+using Repository.Common.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Repository.General
+namespace Repository.Common
 {
     public class RState : Repository<State>, IRState
     {

@@ -1,5 +1,6 @@
 ﻿using Model.Commands.Customers;
 using Model.Enums.Customers;
+using Model.Models.Common;
 using Model.Models.Companies;
 using Model.Models.General;
 using System;
@@ -10,7 +11,7 @@ using System.Text;
 
 namespace Model.Models.Customers
 {
-    [Table("Customer")]
+    [Table("CUS_Customer")]
     public class Customer : BaseModel
     {
         [Key]

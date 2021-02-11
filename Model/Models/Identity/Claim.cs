@@ -1,4 +1,5 @@
 ﻿using Model.Enums.Identity;
+using Model.Models.Common;
 using Model.Models.General;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

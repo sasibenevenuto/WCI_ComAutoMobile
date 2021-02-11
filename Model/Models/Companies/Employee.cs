@@ -1,14 +1,13 @@
-﻿using Model.Models.General;
+﻿using Model.Models.Common;
+using Model.Models.General;
 using Model.Models.Identity;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Model.Models.Companies
 {
-    [Table("Employee")]
+    [Table("COM_Employee")]
     public class Employee : BaseModel
     {
         [Key]

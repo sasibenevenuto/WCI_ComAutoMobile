@@ -1,7 +1,7 @@
-﻿using Application.Handlers.General.Interfaces;
+﻿using Application.Handlers.Common.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Model.Commands.General;
-using Model.ViewModels.General;
+using Model.ViewModels.Common;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

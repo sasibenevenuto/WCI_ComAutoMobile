@@ -1,5 +1,5 @@
 ﻿using Model.Models.Companies;
-using Repository.General.Interfaces;
+using Repository.Common.Interfaces;
 
 namespace Repository.Companies.Interfaces
 {

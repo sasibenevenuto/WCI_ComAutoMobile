@@ -1,18 +1,20 @@
-﻿using Model.Models.General;
+﻿using Model.Models.Common;
+using Model.Models.General;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Models.Customers
 {
-    [Table("CustomerAddress")]
+    [Table("CUS_CustomerAddress")]
     public class CustomerAddress : BaseModel
     {
         [Key]
         public long CustomerAddressId { get; set; }
 
-        //[ForeignKey("Customer")]
-        //public long CustomerId { get; set; }
-        //public Customer Customer { get; set; }
+        [ForeignKey("Customer")]
+        public Guid CustomerId { get; set; }
+        public Customer Customer { get; set; }
 
         [Column(TypeName ="nvarchar(20)")]
         public string CellPhone { get; set; }

@@ -1,6 +1,6 @@
 ﻿using Model.Models.Customers;
 using Model.ViewModels.Customers;
-using Repository.General.Interfaces;
+using Repository.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

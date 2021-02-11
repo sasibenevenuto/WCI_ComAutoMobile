@@ -1,9 +1,6 @@
-﻿using Model.Models.General;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Model.Models.Common;
 
-namespace Model.ViewModels.General
+namespace Model.ViewModels.Common
 {
     public class StateViewModel
     {

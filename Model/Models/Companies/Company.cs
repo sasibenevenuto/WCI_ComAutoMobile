@@ -1,13 +1,13 @@
-﻿using Model.Models.General;
+﻿using Model.Models.Common;
+using Model.Models.General;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Model.Models.Companies
 {
-    [Table("Company")]
+    [Table("COM_Company")]
     public class Company : BaseModel
     {
         [Key]
@@ -84,7 +84,7 @@ namespace Model.Models.Companies
 
         #region .:: One-To-Zero or One ::.
         //public int? CompanyConfigNFeId { get; set; }
-        public virtual CompanyConfigNFe CompanyConfigNFe { get; set; }
+        public CompanyConfigNFe CompanyConfigNFe { get; set; }
         #endregion     
     }
 }

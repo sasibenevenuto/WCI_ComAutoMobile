@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Model.Models.General;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
-namespace Model.Models.General
+namespace Model.Models.Common
 {
     [Table("State")]
     public class State : BaseModel

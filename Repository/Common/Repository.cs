@@ -1,14 +1,14 @@
 ﻿using Context;
 using Dapper;
 using Model.Models.General;
-using Repository.General.Interfaces;
+using Repository.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Repository.General
+namespace Repository.Common
 {
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
     {

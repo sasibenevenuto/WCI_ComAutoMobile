@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Model.Models.Common;
 using Model.Models.Companies;
 using Model.Models.Customers;
 using Model.Models.General;

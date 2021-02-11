@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.General.Interfaces
+namespace Repository.Common.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : BaseModel
     {

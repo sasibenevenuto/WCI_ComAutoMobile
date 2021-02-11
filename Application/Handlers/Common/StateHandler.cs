@@ -1,14 +1,14 @@
-﻿using Application.Handlers.General.Interfaces;
+﻿using Application.Handlers.Common.Interfaces;
 using Model.Commands.General;
-using Model.Models.General;
-using Model.ViewModels.General;
-using Repository.General.Interfaces;
+using Model.Models.Common;
+using Model.ViewModels.Common;
+using Repository.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Application.Handlers.General
+namespace Application.Handlers.Common
 {
     public class StateHandler : IStateHandler
     {

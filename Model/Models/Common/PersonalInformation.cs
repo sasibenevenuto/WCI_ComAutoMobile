@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Model.Models.General
+namespace Model.Models.Common
 {
     [Table("Personal_Information")]
     public class PersonalInformation : BaseModel

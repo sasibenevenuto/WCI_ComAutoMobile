@@ -1,7 +1,7 @@
+using Application.Handlers.Common;
+using Application.Handlers.Common.Interfaces;
 using Application.Handlers.Customers;
 using Application.Handlers.Customers.Interfaces;
-using Application.Handlers.General;
-using Application.Handlers.General.Interfaces;
 using Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,10 +13,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Model.Models.General;
 using Model.Models.Identity;
+using Repository.Common;
+using Repository.Common.Interfaces;
 using Repository.Customers;
 using Repository.Customers.Interfaces;
-using Repository.General;
-using Repository.General.Interfaces;
 using System;
 using System.IO;
 

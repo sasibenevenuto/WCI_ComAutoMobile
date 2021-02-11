@@ -1,9 +1,9 @@
 ﻿using Model.Commands.General;
-using Model.ViewModels.General;
+using Model.ViewModels.Common;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Application.Handlers.General.Interfaces
+namespace Application.Handlers.Common.Interfaces
 {
     public interface IStateHandler
     {

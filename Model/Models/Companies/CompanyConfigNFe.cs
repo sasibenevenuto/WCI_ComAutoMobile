@@ -1,4 +1,5 @@
 ﻿using Model.Enums.Companies;
+using Model.Models.Common;
 using Model.Models.General;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Models.Companies
 {
-    [Table("CompanyConfigNFe")]
+    [Table("COM_CompanyConfigNFe")]
     public class CompanyConfigNFe : BaseModel
     {
         [Key]

@@ -1,10 +1,8 @@
 ﻿using Context;
-using Microsoft.Extensions.Options;
 using Model.Models.Customers;
-using Model.Models.General;
 using Model.ViewModels.Customers;
+using Repository.Common;
 using Repository.Customers.Interfaces;
-using Repository.General;
 using System;
 using System.Collections.Generic;
 using System.Linq;

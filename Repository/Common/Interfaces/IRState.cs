@@ -1,9 +1,9 @@
-﻿using Model.Models.General;
-using Model.ViewModels.General;
+﻿using Model.Models.Common;
+using Model.ViewModels.Common;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Repository.General.Interfaces
+namespace Repository.Common.Interfaces
 {
     public interface IRState : IRepository<State>
     {
