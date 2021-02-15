@@ -1,5 +1,6 @@
 ﻿using Model.Models.Common;
 using Model.ViewModels.Common;
+using Model.ViewModels.General;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,6 +10,6 @@ namespace Repository.Common.Interfaces
 {
     public interface IRCity : IRepository<City>
     {
-        Task<List<CityViewModel>> GetListCityAsync(City city);
+        Task<BaseRetornoApi<CityViewModel>> GetListCityAsync(int? estadoId, string cidade, int? pageNumber, int? rowspPage);
     }
 }

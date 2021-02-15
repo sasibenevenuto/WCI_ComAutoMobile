@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 
 namespace WCI_ComAutoMobile.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CitiesController : Controller
     {
         private readonly ICityHandler _cityHandler;
@@ -19,14 +21,11 @@ namespace WCI_ComAutoMobile.Controllers
         }
 
         [HttpGet]
-        public async Task<BaseRetornoApi<CityViewModel>> Get()
+        public async Task<BaseRetornoApi<CityViewModel>> Get([FromQuery] CityListCommand command)
         {
             try
             {
-                BaseRetornoApi<CityViewModel> retorno = new BaseRetornoApi<CityViewModel>();
-                retorno.Data = await _cityHandler.Handler(new CityListCommand());
-
-                return retorno;
+                return await _cityHandler.Handler(command);
             }
             catch (Exception ex)
             {

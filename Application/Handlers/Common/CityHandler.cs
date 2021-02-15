@@ -2,6 +2,7 @@
 using Model.Commands.Common;
 using Model.Models.Common;
 using Model.ViewModels.Common;
+using Model.ViewModels.General;
 using Repository.Common.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,15 +18,14 @@ namespace Application.Handlers.Common
             _rCity = rCity;
         }
 
-        public async Task<List<CityViewModel>> Handler(CityListCommand command)
+        public async Task<BaseRetornoApi<CityViewModel>> Handler(CityListCommand command)
         {
             try
             {
-                return await _rCity.GetListCityAsync(new City());
+                return await _rCity.GetListCityAsync(command.EstadoId, command.Cidade, command.PageNumber, command.RowspPage);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

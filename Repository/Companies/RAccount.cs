@@ -9,7 +9,7 @@ namespace Repository.Companies
     {
         public RAccount(SolutionContext context) : base(context)
         {
-            //_settings = options.Value;
+            
         }
     }
 }
