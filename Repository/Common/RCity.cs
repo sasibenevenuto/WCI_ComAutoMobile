@@ -22,10 +22,10 @@ namespace Repository.Common
         {
             BaseRetornoApi<CityViewModel> retornoApi = new BaseRetornoApi<CityViewModel>();
 
-            var filtroEstado = estadoId.HasValue && estadoId.Value != 0 ? $"WHERE [EstadoId] = {estadoId}" : "";
+            var filtroEstado = estadoId.HasValue && estadoId.Value != 0 ? $"WHERE [StateId] = {estadoId}" : "";
             filtroEstado = !string.IsNullOrEmpty(cidade) ?
                 string.Concat(!string.IsNullOrEmpty(filtroEstado) ?
-                string.Concat(filtroEstado, "AND ") : "WHERE", $"[Cidade] like '%{cidade}%'") : filtroEstado;
+                string.Concat(filtroEstado, "AND ") : "WHERE", $"[Name] like '%{cidade}%'") : filtroEstado;
 
             retornoApi.Data = (await GetListAsync(new City(), @$"
                                             DECLARE @PageNumber AS INT, @RowspPage AS INT
