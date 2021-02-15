@@ -37,7 +37,6 @@ namespace Repository.Common
                                                 OFFSET ((@PageNumber - 1) * @RowspPage) ROWS
                                                 FETCH NEXT @RowspPage ROWS ONLY;"))
                                             .Select(x => (CityViewModel)x).ToList();
-
             retornoApi.Count = (await GetListCountAsync($"SELECT COUNT(*) FROM GEN_City {filtroEstado}"));
             retornoApi.PaginaAtual = pageNumber ?? 1;
 
