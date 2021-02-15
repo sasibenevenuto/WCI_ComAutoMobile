@@ -89,7 +89,7 @@ namespace Repository.Common
             return entityList;
         }
 
-        protected async Task<int> GetListCountAsync(TEntity entity, string query)
+        protected async Task<int> GetListCountAsync(string query)
         {
             int entityList = 0;
             using var con = new SqlConnection(_db.connectionString);
@@ -97,7 +97,7 @@ namespace Repository.Common
             {
                 con.Open();
 
-                entityList = (await con.QueryAsync<TEntity>(query)).Count();
+                entityList = (await con.QueryAsync<int>(query)).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -150,7 +150,7 @@ namespace Repository.Common
         {
             entity.ModifieldDate = DateTime.Now;
             return entity;
-        }       
+        }
 
         #endregion
     }
