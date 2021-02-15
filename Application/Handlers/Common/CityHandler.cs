@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace Application.Handlers.Common
 {
-    public class StateHandler : IStateHandler
+    public class CityHandler : ICityHandler
     {
-        private readonly IRState _rState;
-        public StateHandler(IRState rState)
+        private readonly IRCity _rCity;
+        public CityHandler(IRCity rCity)
         {
-            _rState = rState;
+            _rCity = rCity;
         }
 
-        public async Task<List<StateViewModel>> Handler(StateListCommand command)
+        public async Task<List<CityViewModel>> Handler(CityListCommand command)
         {
             try
             {
-                return await _rState.GetListStateAsync(new State());
+                return await _rCity.GetListCityAsync(new City());
             }
             catch (Exception ex)
             {

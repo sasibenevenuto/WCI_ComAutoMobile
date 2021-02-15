@@ -1,7 +1,8 @@
 ﻿using Application.Handlers.Common.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Model.Commands.General;
+using Model.Commands.Common;
 using Model.ViewModels.Common;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,16 +12,24 @@ namespace WCI_ComAutoMobile.Controllers
     [ApiController]
     public class StatesController : ControllerBase
     {
-        private readonly IStateHandler _stateHanlder;
-        public StatesController(IStateHandler stateHanlder)
+        private readonly IStateHandler _stateHandler;
+        public StatesController(IStateHandler stateHandler)
         {
-            _stateHanlder = stateHanlder;
+            _stateHandler = stateHandler;
         }
 
         [HttpGet]
         public async Task<List<StateViewModel>> Get()
         {
-            return await _stateHanlder.Handler(new StateListCommand());
+            try
+            {
+                return await _stateHandler.Handler(new StateListCommand());
+            }
+            catch (Exception ex)
+            {                
+                throw ex;
+            }
+            
         }
     }
 }

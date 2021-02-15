@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Application.Handlers.Common.Interfaces
 {
-    public interface IStateHandler
+    public interface ICityHandler
     {
-        Task<List<StateViewModel>> Handler(StateListCommand command);
+        Task<List<CityViewModel>> Handler(CityListCommand command);
     }
 }

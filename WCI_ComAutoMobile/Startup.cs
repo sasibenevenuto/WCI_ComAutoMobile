@@ -60,10 +60,12 @@ namespace WCI_ComAutoMobile
 
             // Repositórios
             services.AddScoped<IRState, RState>();
+            services.AddScoped<ICityHandler, CityHandler>();
             services.AddScoped<IRCustomer, RCustomer>();
 
             // Hanlders
             services.AddScoped<IStateHandler, StateHandler>();
+            services.AddScoped<ICityHandler, CityHandler>();
             services.AddScoped<ICustomerHandler, CustomerHanlder>();
 
             services.AddControllers();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Model.Commands.General
+namespace Model.Commands.Common
 {
     public class StateListCommand
     {

@@ -15,7 +15,7 @@ namespace Repository.Common
 
         }
 
-        public async Task<List<StateViewModel>> GetListStateAsync(State state, string v)
+        public async Task<List<StateViewModel>> GetListStateAsync(State state)
         {
             return (await GetListAsync(new State(), "SELECT * FROM GEN_State")).Select(x => (StateViewModel)x).ToList();
         }
